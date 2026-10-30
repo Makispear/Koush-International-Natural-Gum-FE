@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Globe, Mail, MapPin, ShieldCheck, ArrowUpRight } from "lucide-react";
+import { Globe, Mail, MapPin, ShieldCheck } from "lucide-react";
 import "./footer.css";
 
 export default function Footer() {

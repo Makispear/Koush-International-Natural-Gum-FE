@@ -1,17 +1,13 @@
 import { useState } from "react";
 import {
+  HelpCircle,
+  Mail,
   Send,
   CheckCircle2,
-  ShieldCheck,
-  Mail,
-  Building2,
-  Package,
+  AlertCircle,
 } from "lucide-react";
 import "./requestQuote.css";
-
 import FaqSection from "../faq/faqSection";
-
-const web3FormsAccessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
 export default function RequestQuote() {
   const [submitted, setSubmitted] = useState(false);
@@ -19,17 +15,14 @@ export default function RequestQuote() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!web3FormsAccessKey) {
-      alert("The contact form is not configured. Please try again later.");
-      return;
-    }
-
     setLoading(true);
 
     const formData = new FormData(e.target);
-    // Configured with your target email routing through Web3Forms
-    formData.append("access_key", web3FormsAccessKey);
+    formData.append(
+      "access_key",
+      import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ||
+        "YOUR_WEB3FORMS_ACCESS_KEY_HERE",
+    );
     formData.append("subject", "New B2B RFQ Submission - Kosh International");
 
     try {
@@ -55,134 +48,208 @@ export default function RequestQuote() {
   };
 
   return (
-    <section id="request-quote" className="rfq-section">
+    <section className="rfq-section" id="rfq-form">
       <div className="rfq-container">
-        {/* Header */}
-        <div className="rfq-header">
-          <div className="rfq-badge">
-            <ShieldCheck className="w-4 h-4 text-amber-500" />
-            <span>Institutional Trade Desk</span>
+        {/* Header Notice Box */}
+        <div className="rfq-header-notice">
+          <div className="notice-item">
+            <HelpCircle className="notice-icon" size={20} />
+            <span>
+              Have questions about Incoterms, MOQs, or CoA? Check our{" "}
+              <a href="#faq-section" className="notice-link">
+                FAQs below
+              </a>{" "}
+              before submitting.
+            </span>
           </div>
-          <h2 className="rfq-heading">Request for Quotation (RFQ)</h2>
-          <p className="rfq-sub">
-            Secure container allocations, current FOB/CIF pricing, and official
-            Certificate of Analysis (CoA) documentation for your industrial
-            processing requirements.
-          </p>
+          <div className="notice-item">
+            <Mail className="notice-icon" size={20} />
+            <span>
+              Prefer direct correspondence or need to share heavy spec sheets?
+              Email our trade desk at{" "}
+              <a
+                href="mailto:makiaboabidamaki@gmail.com"
+                className="notice-link"
+              >
+                makiaboabidamaki@gmail.com
+              </a>
+            </span>
+          </div>
         </div>
 
-        {/* Main Content Box */}
-        <div className="rfq-card-wrapper">
+        <div className="rfq-card">
+          <div className="rfq-card-header">
+            <span className="rfq-tag">Institutional Procurement</span>
+            <h2 className="rfq-title">Request for Quotation (RFQ)</h2>
+            <p className="rfq-subtitle">
+              Submit your container allocation requirements. Our trade desk
+              responds within 24 business hours with formal pricing and origin
+              availability.
+            </p>
+          </div>
+
           {submitted ? (
-            <div className="rfq-success-box">
-              <CheckCircle2 className="w-16 h-16 text-amber-400 mb-4 animate-bounce" />
-              <h3>RFQ Transmission Successful</h3>
+            <div className="rfq-success-state">
+              <CheckCircle2 size={48} className="success-icon" />
+              <h3>RFQ Successfully Transmitted</h3>
               <p>
-                Your inquiry has been logged and securely routed to our trade
-                desk at <strong>makiaboabidamaki@gmail.com</strong>. A
-                commercial representative will review your allocation request
-                and respond within 24 hours.
+                Thank you for your inquiry. Our export desk has received your
+                container allocation request and will contact you shortly.
+              </p>
+              <p className="success-email-note">
+                Need to attach documents or modify your request? Email us
+                directly at{" "}
+                <a href="mailto:makiaboabidamaki@gmail.com">
+                  makiaboabidamaki@gmail.com
+                </a>
               </p>
               <button
                 onClick={() => setSubmitted(false)}
                 className="rfq-reset-btn"
               >
-                Submit Another Request
+                Submit Another Inquiry
               </button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="rfq-form">
-              <div className="form-row">
+              <div className="rfq-form-grid">
                 <div className="form-group">
-                  <label>
-                    <Building2 className="w-4 h-4 text-amber-500" /> Company /
-                    Organization Name
-                  </label>
+                  <label htmlFor="name">Full Name *</label>
                   <input
                     type="text"
-                    name="company_name"
+                    id="name"
+                    name="name"
                     required
-                    placeholder="e.g., Global Hydrocolloids LLC"
+                    placeholder="e.g., Jonathan Vance"
                   />
                 </div>
 
                 <div className="form-group">
-                  <label>
-                    <Mail className="w-4 h-4 text-amber-500" /> Professional
-                    Procurement Email
-                  </label>
+                  <label htmlFor="company">Company / Organization *</label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    required
+                    placeholder="e.g., Global Ingredients Ltd."
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="email">Business Email *</label>
                   <input
                     type="email"
+                    id="email"
                     name="email"
                     required
-                    placeholder="buyer@enterprise.com"
+                    placeholder="procurement@globalingredients.com"
                   />
                 </div>
-              </div>
 
-              <div className="form-row">
                 <div className="form-group">
-                  <label>
-                    <Package className="w-4 h-4 text-amber-500" /> Commodity
-                    Grade
-                  </label>
+                  <label htmlFor="phone">Phone Number / WhatsApp</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+1 (555) 019-2834"
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="commodity">Target Commodity *</label>
                   <select
-                    name="commodity_grade"
+                    id="commodity"
+                    name="commodity"
                     required
-                    className="rfq-select"
+                    defaultValue=""
                   >
-                    <option value="Grade 1 Cleaned hashab (Acacia Senegal)">
-                      Grade 1 Cleaned hashab (Acacia Senegal - Kordofan)
+                    <option value="" disabled>
+                      Select target commodity...
                     </option>
-                    <option value="Talha Grade (Acacia Seyal)">
-                      Talha Grade (Acacia Seyal)
+                    <option value="Gum Arabic (Acacia Senegal - Grade 1)">
+                      Gum Arabic (Acacia Senegal - Grade 1)
                     </option>
-                    <option value="Custom Bulk Industrial Blend">
-                      Custom Bulk Industrial Blend
+                    <option value="Frankincense Gum / Tears">
+                      Frankincense Gum / Tears
+                    </option>
+                    <option value="Sudan Sesame Seeds">
+                      Sudan Sesame Seeds
+                    </option>
+                    <option value="Hibiscus Flowers">Hibiscus Flowers</option>
+                    <option value="Fool Sudani (Peanuts)">
+                      Fool Sudani (Peanuts)
+                    </option>
+                    <option value="Mixed Container Allocation">
+                      Mixed Container Allocation
                     </option>
                   </select>
                 </div>
 
                 <div className="form-group">
-                  <label>Estimated Volume / Container Allocation</label>
+                  <label htmlFor="quantity">
+                    Estimated Volume / Containers *
+                  </label>
                   <input
                     type="text"
-                    name="estimated_volume"
+                    id="quantity"
+                    name="quantity"
                     required
-                    placeholder="e.g., 2 x 20ft Containers (FCL)"
+                    placeholder="e.g., 1x 20ft Container (FCL)"
                   />
+                </div>
+
+                <div className="form-group full-width">
+                  <label htmlFor="destination">
+                    Destination Port / Delivery Location *
+                  </label>
+                  <input
+                    type="text"
+                    id="destination"
+                    name="destination"
+                    required
+                    placeholder="e.g., Port of Rotterdam, Netherlands"
+                  />
+                </div>
+
+                <div className="form-group full-width">
+                  <label htmlFor="message">
+                    Specification Notes / Incoterm Preferences
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    placeholder="Specify grade requirements, target delivery timelines, or preferred Incoterms (FOB/CIF)..."
+                  ></textarea>
                 </div>
               </div>
 
-              <div className="form-group full-width">
-                <label>
-                  Destination Port & Specific Requirements (Incoterms, CoA
-                  specs)
-                </label>
-                <textarea
-                  name="message"
-                  required
-                  rows="4"
-                  placeholder="Specify target destination port (e.g., Port of Hamburg, CIF) and any specific documentation requirements..."
-                ></textarea>
+              <div className="rfq-form-footer">
+                <p className="form-privacy-note">
+                  <AlertCircle size={14} /> Strict commercial confidentiality
+                  guaranteed. Direct origin supply from Kosh International.
+                </p>
+                <button
+                  type="submit"
+                  className="rfq-submit-btn"
+                  disabled={loading}
+                >
+                  {loading ? (
+                    "Transmitting..."
+                  ) : (
+                    <>
+                      Submit Quotation Request <Send size={16} />
+                    </>
+                  )}
+                </button>
               </div>
-
-              <button
-                type="submit"
-                className="rfq-submit-btn"
-                disabled={loading}
-              >
-                {loading
-                  ? "Transmitting RFQ Securely..."
-                  : "Submit Official RFQ"}
-                <Send className="w-4 h-4 ml-2" />
-              </button>
             </form>
           )}
         </div>
+        <FaqSection />
       </div>
 
-      <FaqSection />
     </section>
   );
 }

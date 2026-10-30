@@ -42,7 +42,7 @@ export default function FaqSection() {
   };
 
   return (
-    <section id="faq" className="faq-section">
+    <section id="faq-section" className="faq-section">
       <div className="faq-container">
         {/* Section Header */}
         <div className="faq-header">
