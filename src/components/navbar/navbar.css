@@ -1,0 +1,154 @@
+/* src/components/navbar/navbar.css */
+.navbar-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+}
+
+/* Elite Top Utility Bar */
+.navbar-top-bar {
+  background-color: #040e07;
+  color: #a8a29e;
+  font-size: 0.75rem;
+  padding: 0.4rem 1.5rem;
+  border-bottom: 1px solid rgba(197, 155, 39, 0.1);
+}
+
+.navbar-top-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Update or add this in src/components/navbar/navbar.css */
+.navbar-top-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-top-right {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Main Navigation Bar */
+.navbar {
+  background-color: #07150c;
+  border-bottom: 1px solid rgba(197, 155, 39, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 5.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-logo-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+.navbar-logo-sub {
+  font-size: 0.65rem;
+  color: #c59b27;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #d6d3d1;
+}
+
+.navbar-links a {
+  transition: color 0.2s ease;
+  position: pointer;
+}
+
+.navbar-links a:hover {
+  color: #c59b27;
+}
+
+.navbar-cta {
+  background-color: #c59b27 !important;
+  color: #07150c !important;
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.navbar-cta:hover {
+  background-color: #d4af37 !important;
+  transform: translateY(-1px);
+}
+
+/* Mobile & Tablet Styles */
+@media (max-width: 768px) {
+  .navbar-top-bar {
+    display: none; /* Hide utility bar on small screens for cleanliness */
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 5.5rem;
+    left: 0;
+    width: 100%;
+    background-color: #07150c;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 0;
+    gap: 1.5rem;
+    border-bottom: 1px solid rgba(197, 155, 39, 0.3);
+    transform: translateY(-150%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+  }
+
+  .navbar-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}

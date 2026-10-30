@@ -1,0 +1,99 @@
+/* src/components/destinations/spinningGlobe.css */
+.globe-section-wrapper {
+  background-color: #040e07;
+  padding: 6rem 1.5rem;
+  border-top: 1px solid rgba(197, 155, 39, 0.3);
+  border-bottom: 1px solid rgba(197, 155, 39, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.globe-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.globe-header-content {
+  text-align: center;
+  max-width: 48rem;
+  margin-bottom: 2rem;
+}
+
+.globe-tag {
+  color: #c59b27;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.75rem;
+  display: inline-block;
+}
+
+.globe-heading {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.globe-sub {
+  font-size: 1.05rem;
+  color: #d6d3d1;
+  line-height: 1.6;
+}
+
+.globe-canvas-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: radial-gradient(
+    circle,
+    rgba(13, 35, 21, 0.6) 0%,
+    rgba(4, 14, 7, 0.9) 100%
+  );
+  border: 1px solid rgba(197, 155, 39, 0.3);
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.globe-canvas-wrapper:active {
+  cursor: grabbing;
+}
+
+.globe-legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #d6d3d1;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.legend-dot.origin {
+  background-color: #c59b27;
+  box-shadow: 0 0 8px #c59b27;
+}
+
+.legend-dot.market {
+  background-color: #ffffff;
+}
