@@ -217,6 +217,14 @@
 
   .closing-cta-btn {
     justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .closing-cta-btn svg {
+    flex-shrink: 0;
   }
 
   .clause-item {
