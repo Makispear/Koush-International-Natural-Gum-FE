@@ -1,6 +1,6 @@
-# Kosh International Natural Gum
+# Koush International Natural Gum
 
-A website for Kosh International Natural Gum, showcasing its products, destinations, and export services.
+A website for Koush International Natural Gum, showcasing its products, destinations, and export services.
 
 ## Run the project locally
 

@@ -21,7 +21,7 @@ export default function ClosingAssurance() {
                 <ShieldCheck className="w-8 h-8 text-amber-400" />
               </div>
               <span className="certificate-id-label">
-                OFFICIAL EXPORT COMPLIANCE SEAL • REF: KOSH-REG-2026
+                OFFICIAL EXPORT COMPLIANCE SEAL • REF: KOUSH-REG-2026
               </span>
             </div>
 
@@ -30,8 +30,8 @@ export default function ClosingAssurance() {
                 Institutional-Grade Trade Guarantee
               </h2>
               <p className="closing-subtitle">
-                Backed by 13 years of operational mastery, every metric
-                ton dispatched from our facilities is governed by strict
+                Backed by 13 years of operational mastery, every metric ton
+                dispatched from our facilities is governed by strict
                 international export standards, verified purity thresholds, and
                 complete legal accountability.
               </p>

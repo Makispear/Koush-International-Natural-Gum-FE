@@ -21,7 +21,7 @@ export default function Hero() {
             marginBottom: "0.5rem",
           }}
         >
-          KOSH INTERNATIONAL
+          KOUSH INTERNATIONAL
         </h1>
         <h2 className="hero-subtitle">
           EXPORTS OF NATURAL GUM & ELITE SUDANESE COMMODITIES
