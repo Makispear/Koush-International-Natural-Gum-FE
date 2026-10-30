@@ -54,7 +54,7 @@ export default function Footer() {
             <ul className="footer-links-list">
               <li>
                 <span className="footer-static-link">
-                  Gum Arabic (Hashal / Talha)
+                  Gum Arabic (hashab / Talha)
                 </span>
               </li>
               <li>

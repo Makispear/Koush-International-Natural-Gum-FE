@@ -83,8 +83,8 @@ export default function ClosingAssurance() {
                     <CheckCircle2 className="w-4 h-4 text-amber-500" />
                   </div>
                   <p>
-                    Complete documentation packages—including phytosanitary
-                    certificates and bills of lading—structured for seamless
+                    Complete documentation packages including phytosanitary
+                    certificates and bills of lading structured for seamless
                     customs clearance worldwide.
                   </p>
                 </div>

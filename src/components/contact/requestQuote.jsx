@@ -131,8 +131,8 @@ export default function RequestQuote() {
                     required
                     className="rfq-select"
                   >
-                    <option value="Grade 1 Cleaned Hashal (Acacia Senegal)">
-                      Grade 1 Cleaned Hashal (Acacia Senegal - Kordofan)
+                    <option value="Grade 1 Cleaned hashab (Acacia Senegal)">
+                      Grade 1 Cleaned hashab (Acacia Senegal - Kordofan)
                     </option>
                     <option value="Talha Grade (Acacia Seyal)">
                       Talha Grade (Acacia Seyal)

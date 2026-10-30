@@ -5,7 +5,7 @@ export default function Products() {
   const flagshipCommodities = [
     {
       name: "Gum Arabic",
-      grade: "Grade 1 Cleaned & Hand-Picked (Acacia Senegal - Hashal)",
+      grade: "Grade 1 Cleaned & Hand-Picked (Acacia Senegal - hashab)",
       category: "Flagship Export",
       image: "/pic7.png",
       isFlagship: true,
