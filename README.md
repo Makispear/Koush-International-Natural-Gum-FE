@@ -1,35 +1,47 @@
-# Kosh International Natural Gum - B2B Export Portal
+# Kosh International Natural Gum
 
-Official professional web application and B2B export portal for **Kosh International Natural Gum**, showcasing a 13-year operational legacy[cite: 1] in East African origin harvesting, container fulfillment, and institutional-grade trade compliance.
+A website for Kosh International Natural Gum, showcasing its products, destinations, and export services.
 
----
+## Run the project locally
 
-## 🚀 Key Features
+### 1. Install Node.js
 
-- **Interactive Global 3D Trade Globe:** Built with `react-globe.gl` and Three.js, allowing users to rotate and explore active East African origin and international destination corridors.
-- **Infinite Destination Ticker:** Smooth-scrolling marquee highlighting 12+ international trade jurisdictions across Europe, the Middle East, North Africa, Asia, and North America.
-- **Institutional Export Guarantee Seal:** Formally framed compliance assurance section highlighting verified Certificates of Analysis (CoA), Incoterms, and documentation standards.
-- **High-Conversion RFQ Workflow:** Tailored specifically for bulk container procurement with zero retail pricing friction.
-- **Responsive Enterprise Design:** Crafted with a dark forest green (`#040e07`) and metallic gold (`#c59b27`) palette optimized for B2B procurement officers.
+Install **Node.js 20.19 or newer** (or **22.12 or newer**) from [nodejs.org](https://nodejs.org/). npm is included with Node.js.
 
----
+### 2. Open the project folder
 
-## 🛠️ Tech Stack
+If you already have this project, open a terminal in its folder. Or clone it with:
 
-- **Frontend Framework:** React 19 with Vite
-- **Routing:** React Router DOM
-- **Icons:** Lucide React
-- **3D Visualizations:** React Globe.gl / Three.js
-- **Styling:** Modular CSS
+```bash
+git clone https://github.com/Makispear/Koush-International-Natural-Gum-FE.git
+cd Koush-International-Natural-Gum-FE
+```
 
----
+### 3. Install dependencies
 
-## 📦 Local Development Setup
+```bash
+npm install
+```
 
-To run this project locally on your machine:
+### 4. Start the website
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/Makispear/Koush-International-Natural-Gum-FE.git](https://github.com/Makispear/Koush-International-Natural-Gum-FE.git)
-   cd kosh-international
-   ```
+```bash
+npm run dev
+```
+
+Open the local URL printed in the terminal (usually `http://localhost:5173`). Leave the terminal running while you use the site. Press **Ctrl+C** to stop it.
+
+## Useful commands
+
+```bash
+npm run build  # Build the site for production
+npm run lint   # Check the code for lint errors
+```
+
+## Built with
+
+- React
+- Vite
+- React Router
+- Lucide icons
+- React Globe.gl and Three.js
