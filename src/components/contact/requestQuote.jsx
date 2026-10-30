@@ -20,8 +20,7 @@ export default function RequestQuote() {
     const formData = new FormData(e.target);
     formData.append(
       "access_key",
-      import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ||
-        "YOUR_WEB3FORMS_ACCESS_KEY_HERE",
+      import.meta.env.WEB3FORMS_ACCESS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY_HERE",
     );
     formData.append("subject", "New B2B RFQ Submission - Kosh International");
 
@@ -249,7 +248,6 @@ export default function RequestQuote() {
         </div>
         <FaqSection />
       </div>
-
     </section>
   );
 }

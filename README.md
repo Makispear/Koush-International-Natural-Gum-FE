@@ -28,7 +28,7 @@ npm install
 To enable quote requests, copy `.env.example` to `.env.local` and replace the placeholder with your Web3Forms access key:
 
 ```env
-VITE_WEB3FORMS_ACCESS_KEY=your_actual_access_key
+WEB3FORMS_ACCESS_KEY=your_actual_access_key
 ```
 
 Get an access key from [Web3Forms](https://web3forms.com/). Restart the dev server after changing environment variables. Without a key, the rest of the site still runs, but the contact form cannot submit.
