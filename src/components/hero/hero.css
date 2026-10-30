@@ -17,11 +17,10 @@
   width: 100%;
 }
 
-/* Add inside src/components/hero/hero.css */
 .hero-actions {
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* Creates clean, professional spacing between the button and link */
+  gap: 1.5rem;
   margin-bottom: 2rem;
   flex-wrap: wrap;
 }
@@ -103,13 +102,12 @@
   margin-top: 0.2rem;
 }
 
-/* Adjusted Scroll Prompt Position to clear carousel dots */
 .hero-scroll-prompt {
   position: absolute;
-  bottom: 3.8rem; /* Raised safely above the carousel dots */
+  bottom: 3.8rem;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 4; /* Sits above carousel overlay/dots */
+  z-index: 4;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -143,16 +141,37 @@
   }
 }
 
+/* Tablet & Mobile Centered Layout (768px and below, covering iPads) */
 @media (max-width: 768px) {
   .hero-wrapper {
     min-height: auto;
-    padding: 4rem 1rem;
+    padding: 4rem 1.5rem;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-subtitle,
+  .hero-description {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
   }
 
   .hero-metrics-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
     margin-top: 2.5rem;
+    width: 100%;
+    max-width: 100%;
   }
 
   .hero-scroll-prompt {

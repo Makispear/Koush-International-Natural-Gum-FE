@@ -1,14 +1,17 @@
 /* src/App.jsx */
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/utils/ScrollToTop";
 import Navbar from "./components/navbar/navbar";
 import Footer from "./components/footer/footer";
 import Home from "./pages/Home";
 import Products from "./pages/products/products";
 import "./styles/global.css";
+import RequestQuote from "./components/contact/requestQuote";
 
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div
         className="app-layout"
         style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
@@ -18,6 +21,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/contact" element={<RequestQuote />} />
+            <Route path="/quote" element={<RequestQuote />} />
           </Routes>
         </main>
         <Footer />

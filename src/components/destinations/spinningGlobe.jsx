@@ -150,7 +150,7 @@ export default function SpinningGlobeDestinations() {
           <h2 className="globe-heading">Interactive Global Export Corridors</h2>
           <p className="globe-sub">
             Drag to rotate our operational trade network. Spanning 12+
-            international jurisdictions from East African origin to global
+            international jurisdictions from Sudan origin to global
             ports.
           </p>
         </div>

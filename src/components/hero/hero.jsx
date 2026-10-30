@@ -27,9 +27,9 @@ export default function Hero() {
           EXPORTS OF NATURAL GUM & ELITE SUDANESE COMMODITIES
         </h2>
         <p className="hero-description">
-          Bridging East African origin harvesting with industrial buyers across
-          Europe, Asia, and the Middle East. Delivering uncompromising purity in
-          Gum Arabic, Frankincense, and agricultural staples.
+          Bridging direct-origin Sudanese harvesting with global industrial
+          buyers. Delivering uncompromising purity in Gum Arabic, Frankincense,
+          and agricultural staples to international markets.
         </p>
 
         {/* Updated Actions Container with proper spacing */}

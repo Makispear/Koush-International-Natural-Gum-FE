@@ -92,9 +92,6 @@ export default function Footer() {
                 <span>Verified Certificate of Analysis (CoA) Available</span>
               </li>
             </ul>
-            <Link to="/contact" className="footer-rfq-btn">
-              Inquire Bulk Rates <ArrowUpRight className="w-4 h-4" />
-            </Link>
           </div>
         </div>
 
