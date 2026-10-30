@@ -22,7 +22,7 @@ export default function RequestQuote() {
       "access_key",
       import.meta.env.WEB3FORMS_ACCESS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY_HERE",
     );
-    formData.append("subject", "New B2B RFQ Submission - Koush International");
+    formData.append("subject", "New B2B RFQ Submission - Kuosh International");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -227,7 +227,7 @@ export default function RequestQuote() {
               <div className="rfq-form-footer">
                 <p className="form-privacy-note">
                   <AlertCircle size={14} /> Strict commercial confidentiality
-                  guaranteed. Direct origin supply from Koush International.
+                  guaranteed. Direct origin supply from Kuosh International.
                 </p>
                 <button
                   type="submit"

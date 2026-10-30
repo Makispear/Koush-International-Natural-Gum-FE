@@ -1,6 +1,6 @@
-# Koush International Natural Gum
+# Kuosh International Natural Gum
 
-A website for Koush International Natural Gum, showcasing its products, destinations, and export services.
+A website for Kuosh International Natural Gum, showcasing its products, destinations, and export services.
 
 ## Run the project locally
 
@@ -13,8 +13,8 @@ Install **Node.js 20.19 or newer** (or **22.12 or newer**) from [nodejs.org](htt
 If you already have this project, open a terminal in its folder. Or clone it with:
 
 ```bash
-git clone https://github.com/Makispear/Koush-International-Natural-Gum-FE.git
-cd Koush-International-Natural-Gum-FE
+git clone https://github.com/Makispear/Kuosh-International-Natural-Gum-FE.git
+cd Kuosh-International-Natural-Gum-FE
 ```
 
 ### 3. Install dependencies

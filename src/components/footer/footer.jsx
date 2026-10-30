@@ -13,7 +13,7 @@ export default function Footer() {
           {/* Column 1: Company Info */}
           <div className="footer-col footer-brand-col">
             <div className="footer-brand">
-              <span className="footer-logo-text">KOUSH INTERNATIONAL</span>
+              <span className="footer-logo-text">KUOSH INTERNATIONAL</span>
               <span className="footer-logo-sub">
                 Natural Gum & Agricultural Exports
               </span>
@@ -85,7 +85,7 @@ export default function Footer() {
               </li>
               <li>
                 <Mail className="w-4 h-4 text-amber-500 shrink-0" />
-                <span>trade@koushinternational.com</span>
+                <span>trade@kuoshinternational.com</span>
               </li>
               <li>
                 <ShieldCheck className="w-4 h-4 text-amber-500 shrink-0" />
@@ -98,7 +98,7 @@ export default function Footer() {
         {/* Bottom Section: Legal & Copyright */}
         <div className="footer-bottom">
           <p className="footer-copyright">
-            &copy; {currentYear} Koush International Natural Gum. All rights
+            &copy; {currentYear} Kuosh International Natural Gum. All rights
             reserved. Direct Origin Exporter.
           </p>
           <div className="footer-legal-links">

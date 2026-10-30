@@ -31,7 +31,7 @@ export default function Navbar() {
       <header className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-brand" onClick={closeMenu}>
-            <span className="navbar-logo-text">KOUSH INTERNATIONAL</span>
+            <span className="navbar-logo-text">KUOSH INTERNATIONAL</span>
             <span className="navbar-logo-sub">
               Natural Gum & Agricultural Exports
             </span>

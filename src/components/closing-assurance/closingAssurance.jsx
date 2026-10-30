@@ -21,7 +21,7 @@ export default function ClosingAssurance() {
                 <ShieldCheck className="w-8 h-8 text-amber-400" />
               </div>
               <span className="certificate-id-label">
-                OFFICIAL EXPORT COMPLIANCE SEAL • REF: KOUSH-REG-2026
+                OFFICIAL EXPORT COMPLIANCE SEAL • REF: KUOSH-REG-2026
               </span>
             </div>
 
