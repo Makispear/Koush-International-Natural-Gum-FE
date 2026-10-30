@@ -21,7 +21,7 @@ export default function Footer() {
             <p className="footer-about-text">
               Direct origin sourcing and global container fulfillment of Grade-1
               Gum Arabic, Frankincense, and elite agricultural commodities
-              backed by a 13-year operational legacy[cite: 1].
+              backed by a 13-year operational legacy.
             </p>
             <div className="footer-origin-badge">
               <Globe className="w-4 h-4 text-amber-500" />

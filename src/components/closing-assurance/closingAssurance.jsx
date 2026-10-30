@@ -30,7 +30,7 @@ export default function ClosingAssurance() {
                 Institutional-Grade Trade Guarantee
               </h2>
               <p className="closing-subtitle">
-                Backed by 13 years of operational mastery[cite: 1], every metric
+                Backed by 13 years of operational mastery, every metric
                 ton dispatched from our facilities is governed by strict
                 international export standards, verified purity thresholds, and
                 complete legal accountability.
@@ -68,7 +68,7 @@ export default function ClosingAssurance() {
                   <p>
                     A decade-plus legacy of reliable container allocation and
                     fulfillment across major trade corridors in Europe, Asia,
-                    the Middle East, and North America[cite: 1].
+                    the Middle East, and North America.
                   </p>
                 </div>
               </div>

@@ -100,7 +100,7 @@ export default function ExportDestinations() {
           <p className="destinations-sub">
             Kosh International bridges East African origin harvesting with
             industrial processors and wholesale distributors across 12+
-            international jurisdictions[cite: 1].
+            international jurisdictions.
           </p>
         </div>
 
