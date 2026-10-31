@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Globe, Mail, MapPin, ShieldCheck } from "lucide-react";
+import { Globe, Mail, MapPin, PhoneCallIcon, ShieldCheck } from "lucide-react";
 import "./footer.css";
 
 export default function Footer() {
@@ -78,14 +78,26 @@ export default function Footer() {
             <h4 className="footer-heading">Global Trade Desk</h4>
             <ul className="footer-contact-list">
               <li>
+                <Globe className="w-4 h-4 text-amber-500 shrink-0" />
+                <span>U.S.-based operations</span>
+              </li>
+              <li>
                 <MapPin className="w-4 h-4 text-amber-500 shrink-0" />
-                <span>
-                  Khartoum, Sudan / North American Logistics Coordination
-                </span>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Omdurman%2C+Sudan+-+Omdurman+Industrial+Area"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Headquarters: Omdurman, Sudan
+                </a>
               </li>
               <li>
                 <Mail className="w-4 h-4 text-amber-500 shrink-0" />
-                <span>trade@kuoshinternational.com</span>
+                <span>makiaboabidamaki@gmail.com</span>
+              </li>
+              <li>
+                <PhoneCallIcon className="w-4 h-4 text-amber-500 shrink-0" />
+                <a href="tel:+18607941672">+1 (860) 794-1672</a>
               </li>
               <li>
                 <ShieldCheck className="w-4 h-4 text-amber-500 shrink-0" />
