@@ -40,7 +40,7 @@ export default function Footer() {
                 <Link to="/products">Products & Specifications</Link>
               </li>
               <li>
-                <Link to="/about">Our 13-Year Legacy</Link>
+                <Link to="/legacy">Our 13-Year Legacy</Link>
               </li>
               <li>
                 <Link to="/contact">Request Quotation (RFQ)</Link>
@@ -98,10 +98,6 @@ export default function Footer() {
               <li>
                 <PhoneCallIcon className="w-4 h-4 text-amber-500 shrink-0" />
                 <a href="tel:+18607941672">+1 (860) 794-1672</a>
-              </li>
-              <li>
-                <ShieldCheck className="w-4 h-4 text-amber-500 shrink-0" />
-                <span>Verified Certificate of Analysis (CoA) Available</span>
               </li>
             </ul>
           </div>

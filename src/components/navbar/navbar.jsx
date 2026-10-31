@@ -52,7 +52,7 @@ export default function Navbar() {
             <Link to="/products" onClick={closeMenu}>
               Products
             </Link>
-            <Link to="/about" onClick={closeMenu}>
+            <Link to="/legacy" onClick={closeMenu}>
               Legacy
             </Link>
             <Link to="/contact" className="navbar-cta" onClick={closeMenu}>

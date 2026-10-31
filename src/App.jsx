@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Products from "./pages/products/products";
 import "./styles/global.css";
 import RequestQuote from "./components/contact/requestQuote";
+import Legacy from "./pages/legacy/legacy";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/contact" element={<RequestQuote />} />
             <Route path="/quote" element={<RequestQuote />} />
+            <Route path="/legacy" element={<Legacy />} />
           </Routes>
         </main>
         <Footer />
