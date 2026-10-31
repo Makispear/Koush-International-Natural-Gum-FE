@@ -232,3 +232,19 @@
     gap: 1rem;
   }
 }
+
+@media (max-width: 1024px) {
+  .clause-item {
+    align-items: center;
+    text-align: center;
+  }
+
+  .clause-content {
+    width: 100%;
+  }
+
+  .clause-header-row {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+}

@@ -141,8 +141,8 @@
   }
 }
 
-/* Tablet & Mobile Centered Layout (768px and below, covering iPads) */
-@media (max-width: 768px) {
+/* Keep the homepage content centered whenever the navbar uses its menu layout. */
+@media (max-width: 1024px) {
   .hero-wrapper {
     min-height: auto;
     padding: 4rem 1.5rem;

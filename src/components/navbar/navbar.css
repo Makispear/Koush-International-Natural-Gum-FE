@@ -119,9 +119,25 @@
 }
 
 /* Mobile & Tablet Styles */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .navbar-top-bar {
     display: none; /* Hide utility bar on small screens for cleanliness */
+  }
+
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  .navbar-logo-text {
+    font-size: clamp(1rem, 4vw, 1.25rem);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  .navbar-logo-sub {
+    font-size: clamp(0.5rem, 2.1vw, 0.6rem);
+    letter-spacing: 0.08em;
+    white-space: nowrap;
   }
 
   .navbar-toggle {

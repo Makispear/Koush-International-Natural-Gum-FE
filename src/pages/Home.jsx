@@ -5,7 +5,7 @@ import ClosingAssurance from "../components/closing-assurance/closingAssurance";
 
 export default function Home() {
   return (
-    <div>
+    <div className="home-page">
       <Hero />
       <SpinningGlobeDestinations />
       <ClosingAssurance />
