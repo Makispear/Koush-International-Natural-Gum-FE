@@ -182,7 +182,7 @@ export default function SpinningGlobeDestinations() {
         <div className="globe-legend">
           <div className="legend-item">
             <span className="legend-dot origin"></span>
-            <span>Origin Headquarters (Khartoum / Port Sudan)</span>
+            <span>Origin Headquarters (Omdurman - Sudan)</span>
           </div>
           <div className="legend-item">
             <span className="legend-dot market"></span>

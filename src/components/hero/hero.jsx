@@ -12,15 +12,7 @@ export default function Hero() {
 
       <div className="hero-content">
         <span className="hero-tag">Global Agricultural Exporter</span>
-        <h1
-          className="navbar-logo-text"
-          style={{
-            fontSize: "clamp(2.2rem, 5vw, 4rem)",
-            fontWeight: "800",
-            color: "#fff",
-            marginBottom: "0.5rem",
-          }}
-        >
+        <h1 className="hero-title">
           KUOSH INTERNATIONAL
         </h1>
         <h2 className="hero-subtitle">

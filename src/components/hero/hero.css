@@ -17,6 +17,16 @@
   width: 100%;
 }
 
+.hero-title {
+  max-width: 100%;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  text-wrap: balance;
+}
+
 .hero-actions {
   display: flex;
   align-items: center;
@@ -153,6 +163,11 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+
+  .hero-title {
+    font-size: clamp(1.5rem, 7.5vw, 2.2rem);
+    letter-spacing: 0.02em;
   }
 
   .hero-subtitle,
