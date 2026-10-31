@@ -22,7 +22,7 @@ export default function Navbar() {
             </span>
           </div>
           <div className="navbar-top-right">
-            <span>13 Years Industry Legacy</span>
+            <span>13 Years operating</span>
           </div>
         </div>
       </div>
