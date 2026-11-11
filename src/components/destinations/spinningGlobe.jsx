@@ -130,18 +130,6 @@ export default function SpinningGlobeDestinations() {
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
-  useEffect(() => {
-    if (globeEl.current) {
-      const controls = globeEl.current.controls();
-      if (controls) {
-        controls.autoRotate = true;
-        controls.autoRotateSpeed = 1.0;
-        controls.enableZoom = true;
-      }
-      globeEl.current.pointOfView({ lat: 25, lng: 20, altitude: 2.2 }, 500);
-    }
-  }, []);
-
   return (
     <section id="destinations" className="globe-section-wrapper">
       <div className="globe-container">
@@ -160,6 +148,18 @@ export default function SpinningGlobeDestinations() {
             ref={globeEl}
             width={globeSize.width}
             height={globeSize.height}
+            onGlobeReady={() => {
+              const controls = globeEl.current.controls();
+              if (controls) {
+                controls.autoRotate = true;
+                controls.autoRotateSpeed = 1.0;
+                controls.enableZoom = true;
+              }
+              globeEl.current.pointOfView(
+                { lat: 25, lng: 20, altitude: 1.0 },
+                500,
+              );
+            }}
             globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
             bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
             backgroundColor="rgba(0,0,0,0)"
