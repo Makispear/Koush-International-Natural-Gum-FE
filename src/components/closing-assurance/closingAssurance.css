@@ -113,11 +113,6 @@
     background-color 0.3s ease;
 }
 
-.clause-item:hover {
-  border-color: rgba(197, 155, 39, 0.6);
-  background-color: rgba(13, 35, 21, 0.95);
-}
-
 .clause-icon-box {
   background-color: rgba(197, 155, 39, 0.12);
   border: 1px solid rgba(197, 155, 39, 0.35);
