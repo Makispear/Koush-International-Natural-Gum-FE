@@ -57,10 +57,13 @@ export default function Legacy() {
             transparency and traceability.
           </p>
           <p>
-            From our signature **Acacia Senegal (Hashal)** Gum Arabic and raw
-            Boswellia oleoresin tears to our meticulously cleaned sesame seeds
-            and hibiscus calyces, every shipment reflects our commitment to
-            purity, consistency, and professional execution.
+            From our signature{" "}
+            <strong className="legacy-highlight">
+              Acacia Senegal (Hashab)
+            </strong>{" "}
+            Gum Arabic and raw Boswellia oleoresin tears to our meticulously
+            cleaned sesame seeds and hibiscus calyces, every shipment reflects
+            our commitment to purity, consistency, and professional execution.
           </p>
         </div>
       </div>

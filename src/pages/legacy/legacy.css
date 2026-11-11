@@ -103,6 +103,11 @@
   margin-bottom: 1rem;
 }
 
+.legacy-highlight {
+  color: #f3e5ab;
+  font-weight: 700;
+}
+
 .legacy-story-card p:last-child {
   margin-bottom: 0;
 }
