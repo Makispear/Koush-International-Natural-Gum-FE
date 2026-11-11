@@ -28,10 +28,16 @@ npm install
 To enable quote requests, copy `.env.example` to `.env.local` and replace the placeholder with your Web3Forms access key:
 
 ```env
-WEB3FORMS_ACCESS_KEY=your_actual_access_key
+VITE_WEB3FORMS_ACCESS_KEY=your_actual_access_key
 ```
 
-Get an access key from [Web3Forms](https://web3forms.com/). Restart the dev server after changing environment variables. Without a key, the rest of the site still runs, but the contact form cannot submit.
+Get an access key from [Web3Forms](https://web3forms.com/). Vite only exposes environment variables prefixed with `VITE_` to browser code. Restart the dev server after changing environment variables. Without a key, the rest of the site still runs, but the contact form cannot submit.
+
+#### Vercel deployment
+
+In the Vercel project, open **Settings → Environment Variables** and add `VITE_WEB3FORMS_ACCESS_KEY` with the Web3Forms access key. Enable it for **Production** (and Preview/Development if those deployments need the form), save, and redeploy. Vite embeds this value during the build, so changing the Vercel setting does not update an already-built deployment.
+
+The form submits directly from the visitor's browser to Web3Forms; no Vercel serverless function or SMTP configuration is required. The Web3Forms access key is used by its client-side integration and will be present in the built JavaScript, so do not use it as a secret credential. If Web3Forms rejects submissions on the deployed site, check its dashboard for domain restrictions and allow the deployed `vercel.app` or custom domain.
 
 ### 5. Start the website
 

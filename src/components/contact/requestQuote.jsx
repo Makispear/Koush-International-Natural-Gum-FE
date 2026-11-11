@@ -20,7 +20,8 @@ export default function RequestQuote() {
     const formData = new FormData(e.target);
     formData.append(
       "access_key",
-      import.meta.env.WEB3FORMS_ACCESS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY_HERE",
+      import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ||
+        "PlaceholderAccessKeyForTesting - means it didn't read if if you see this in production",
     );
     formData.append("subject", "New B2B RFQ Submission - Kuosh International");
 
