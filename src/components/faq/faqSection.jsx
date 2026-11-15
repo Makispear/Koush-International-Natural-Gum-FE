@@ -7,33 +7,44 @@ export default function FaqSection() {
 
   const faqs = [
     {
-      question:
-        "What are your minimum order quantities (MOQ) for bulk shipments?",
+      question: "What varieties of Gum Arabic do you supply?",
       answer:
-        "Our standard MOQ for international export is one 20-foot container (FCL) to ensure optimal shipping efficiency and cost-effectiveness for ocean freight. Sample and pilot-run allocations can be reviewed upon request for qualified industrial processors.",
+        "Hashab (Acacia senegal) and Talha (Acacia seyal).",
     },
     {
-      question: "What Incoterms do you support for international deliveries?",
+      question: "What forms of Gum Arabic are available?",
       answer:
-        "We primarily operate under FOB (Free on Board) out of Port Sudan and CIF (Cost, Insurance, and Freight) to major designated international maritime terminals across Europe, Asia, the Middle East, and North America.",
+        "Raw, cleaned, sorted and graded, kibbled, powder, and spray-dried.",
     },
     {
-      question:
-        "Are Certificate of Analysis (CoA) and phytosanitary documents provided with every batch?",
+      question: "What are your minimum order quantities?",
       answer:
-        "Yes. Every container is dispatched with rigorous origin documentation, including an official Certificate of Analysis guaranteeing moisture limits, purity thresholds, and grade-1 botanical specifications.",
+        "Bulk orders are container-based: approximately 16 MT for a 20-foot container or 26 MT for a 40-foot container.",
     },
     {
-      question:
-        "What are your standard payment terms for bulk container allocations?",
+      question: "What packaging options do you offer?",
       answer:
-        "For institutional buyers and recurring partners, we accept secure international bank transfers (TT) and verified Letter of Credit (LC) terms established through recognized financial institutions.",
+        "50 kg bags, with buyer and Kuosh International logos available.",
     },
     {
-      question:
-        "What is the typical lead time from RFQ confirmation to port dispatch?",
+      question: "Can buyers request samples?",
       answer:
-        "Standard port dispatch and container loading from our Sudan processing facilities typically range between 10 to 21 business days, depending on port congestion, vessel scheduling, and specific customs documentation requirements.",
+        "Yes. 150–250 g samples are available on request.",
+    },
+    {
+      question: "What export documentation do you provide?",
+      answer:
+        "Available documents include a CoA, Certificate of Origin, and commercial invoice. Phytosanitary documents depend on destination.",
+    },
+    {
+      question: "What shipping arrangements do you support?",
+      answer:
+        "CIF is available. Other arrangements can be discussed by destination.",
+    },
+    {
+      question: "What is your order lead time?",
+      answer:
+        "Allow at least three months for bulk orders.",
     },
   ];
 

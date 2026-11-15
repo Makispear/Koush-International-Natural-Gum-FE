@@ -89,7 +89,9 @@ export default function Footer() {
               </li>
               <li>
                 <Mail className="w-4 h-4 text-amber-500 shrink-0" />
-                <span>info@kuoshinternational.com</span>
+                <a href="mailto:info@kuoshinternational.com">
+                  info@kuoshinternational.com
+                </a>
               </li>
               <li>
                 <PhoneCallIcon className="w-4 h-4 text-amber-500 shrink-0" />

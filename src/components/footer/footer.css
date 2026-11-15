@@ -108,6 +108,21 @@
   line-height: 1.4;
 }
 
+.footer-contact-list a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-contact-list a:hover {
+  color: #c59b27;
+}
+
+.footer-contact-list a:focus-visible {
+  outline: 2px solid #f3e5ab;
+  outline-offset: 3px;
+}
+
 .footer-rfq-btn {
   display: inline-flex;
   align-items: center;
