@@ -15,9 +15,14 @@ export default function RequestQuote() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-
     const formData = new FormData(e.target);
+    const attachment = formData.get("attachment");
+    if (attachment instanceof File && attachment.size > 1_000_000) {
+      alert("Please upload a file smaller than 1 MB.");
+      return;
+    }
+
+    setLoading(true);
     formData.append(
       "access_key",
       import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ||
@@ -82,9 +87,9 @@ export default function RequestQuote() {
             <span className="rfq-tag">Institutional Procurement</span>
             <h2 className="rfq-title">Request for Quotation (RFQ)</h2>
             <p className="rfq-subtitle">
-              Submit your container allocation requirements. Our trade desk
-              responds within 24 business hours with formal pricing and origin
-              availability.
+              Submit your product and shipment requirements. Our team will
+              review your inquiry and coordinate pricing, availability, and
+              export arrangements based on your specifications.
             </p>
           </div>
 
@@ -93,11 +98,12 @@ export default function RequestQuote() {
               <CheckCircle2 size={48} className="success-icon" />
               <h3>RFQ Successfully Transmitted</h3>
               <p>
-                Thank you for your inquiry. Our export desk has received your
-                container allocation request and will contact you shortly.
+                Thank you for your inquiry. Our team will review your
+                requirements and follow up regarding availability and a
+                quotation.
               </p>
               <p className="success-email-note">
-                Need to attach documents or modify your request? Email us
+                Need to update your inquiry or send a larger document? Email us
                 directly at{" "}
                 <a href="mailto:info@kuoshinternational.com">
                   info@kuoshinternational.com
@@ -111,50 +117,39 @@ export default function RequestQuote() {
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="rfq-form">
+            <form
+              onSubmit={handleSubmit}
+              className="rfq-form"
+              encType="multipart/form-data"
+            >
               <div className="rfq-form-grid">
+                <h3 className="form-section-heading full-width">
+                  Contact Information
+                </h3>
+
                 <div className="form-group">
                   <label htmlFor="name">Full Name *</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    placeholder="e.g., Jonathan Vance"
-                  />
+                  <input type="text" id="name" name="name" required />
                 </div>
 
                 <div className="form-group">
                   <label htmlFor="company">Company / Organization *</label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    required
-                    placeholder="e.g., Global Ingredients Ltd."
-                  />
+                  <input type="text" id="company" name="company" required />
                 </div>
 
                 <div className="form-group">
                   <label htmlFor="email">Business Email *</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    placeholder="procurement@globalingredients.com"
-                  />
+                  <input type="email" id="email" name="email" required />
                 </div>
 
                 <div className="form-group">
                   <label htmlFor="phone">Phone Number / WhatsApp</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="+1 (555) 019-2834"
-                  />
+                  <input type="tel" id="phone" name="phone" />
                 </div>
+
+                <h3 className="form-section-heading full-width">
+                  Product Requirements
+                </h3>
 
                 <div className="form-group">
                   <label htmlFor="commodity">Target Commodity *</label>
@@ -165,13 +160,16 @@ export default function RequestQuote() {
                     defaultValue=""
                   >
                     <option value="" disabled>
-                      Select target commodity...
+                      Select a commodity...
                     </option>
-                    <option value="Gum Arabic (Acacia Senegal - Grade 1)">
-                      Gum Arabic (Acacia Senegal - Grade 1)
+                    <option value="Gum Arabic - Acacia senegal (Hashab)">
+                      Gum Arabic - Acacia senegal (Hashab)
                     </option>
-                    <option value="Gum Arabic (Talha)">
-                      Gum Arabic (Talha)
+                    <option value="Gum Arabic - Acacia seyal (Talha)">
+                      Gum Arabic - Acacia seyal (Talha)
+                    </option>
+                    <option value="Frankincense - Raw Natural Resin">
+                      Frankincense - Raw Natural Resin
                     </option>
                     <option value="Sudan Sesame Seeds">
                       Sudan Sesame Seeds
@@ -188,47 +186,98 @@ export default function RequestQuote() {
 
                 <div className="form-group">
                   <label htmlFor="quantity">
-                    Estimated Volume / Containers *
+                    Estimated Volume / Container Requirements *
                   </label>
-                  <input
-                    type="text"
+                  <select
                     id="quantity"
                     name="quantity"
                     required
-                    placeholder="e.g., 1x 20ft Container (FCL)"
-                  />
+                    defaultValue=""
+                  >
+                    <option value="" disabled>
+                      Select volume requirements...
+                    </option>
+                    <option value="20-foot container (~16 MT, where applicable)">
+                      20-foot container (~16 MT, where applicable)
+                    </option>
+                    <option value="40-foot container (~26 MT, where applicable)">
+                      40-foot container (~26 MT, where applicable)
+                    </option>
+                    <option value="Other quantity / Sample inquiry">
+                      Other quantity / Sample inquiry
+                    </option>
+                  </select>
                 </div>
 
                 <div className="form-group full-width">
                   <label htmlFor="destination">
-                    Destination Port / Delivery Location *
+                    Destination Country / Port *
                   </label>
                   <input
                     type="text"
                     id="destination"
                     name="destination"
                     required
-                    placeholder="e.g., Port of Rotterdam, Netherlands"
                   />
                 </div>
 
                 <div className="form-group full-width">
-                  <label htmlFor="message">
-                    Specification Notes / Incoterm Preferences
+                  <label htmlFor="specifications">
+                    Preferred Product Form / Specifications
                   </label>
                   <textarea
-                    id="message"
-                    name="message"
-                    rows="4"
-                    placeholder="Specify grade requirements, target delivery timelines, or preferred Incoterms (FOB/CIF)..."
-                  ></textarea>
+                    id="specifications"
+                    name="specifications"
+                    rows="3"
+                    placeholder="Grade, quality, particle size, sorting, or other specifications"
+                  />
+                </div>
+
+                <div className="form-group full-width">
+                  <label htmlFor="incoterm">Preferred Incoterm</label>
+                  <select id="incoterm" name="incoterm" defaultValue="">
+                    <option value="">Select, if known...</option>
+                    <option value="CIF">CIF</option>
+                    <option value="Other / To be discussed">
+                      Other / To be discussed
+                    </option>
+                  </select>
+                </div>
+
+                <div className="form-group full-width">
+                  <label htmlFor="comments">
+                    Additional Requirements / Comments
+                  </label>
+                  <textarea
+                    id="comments"
+                    name="comments"
+                    rows="3"
+                    placeholder="Sourcing, packaging, documentation, or shipping requirements"
+                  />
+                </div>
+
+                <div className="form-group full-width">
+                  <label htmlFor="attachment">
+                    Attach a Specification Sheet (Optional)
+                  </label>
+                  <input
+                    type="file"
+                    id="attachment"
+                    name="attachment"
+                    accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.png,.jpg,.jpeg"
+                  />
+                  <p className="file-upload-note">
+                    Maximum file size: 1 MB.
+                  </p>
                 </div>
               </div>
 
               <div className="rfq-form-footer">
                 <p className="form-privacy-note">
-                  <AlertCircle size={14} /> Strict commercial confidentiality
-                  guaranteed. Direct origin supply from Kuosh International.
+                  <AlertCircle size={14} />
+                  Your inquiry will be handled with commercial confidentiality.
+                  Our team will review your requirements and follow up regarding
+                  product availability, specifications, and quotation.
                 </p>
                 <button
                   type="submit"
