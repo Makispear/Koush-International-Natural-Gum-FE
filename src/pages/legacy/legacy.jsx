@@ -68,6 +68,33 @@ export default function Legacy() {
         </div>
       </div>
 
+      <section
+        className="legacy-location-section"
+        aria-labelledby="legacy-location-heading"
+      >
+        <div className="legacy-location-info">
+          <MapPin className="legacy-location-icon" size={28} aria-hidden="true" />
+          <h2 id="legacy-location-heading">Omdurman Industrial Area</h2>
+          <p>Omdurman, Sudan</p>
+          <a
+            className="legacy-location-link"
+            href="https://www.google.com/maps/search/?api=1&query=Omdurman%20Industrial%20Area%2C%20Omdurman%2C%20Sudan"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View location in Google Maps
+          </a>
+        </div>
+        <div className="legacy-location-map">
+          <iframe
+            title="Map of Omdurman Industrial Area, Omdurman, Sudan"
+            src="https://maps.google.com/maps?q=Omdurman%20Industrial%20Area%2C%20Omdurman%2C%20Sudan&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+      </section>
+
       {/* Core Pillars Grid */}
       <div className="legacy-pillars-section-heading">
         <h2>Core Operational Pillars</h2>
