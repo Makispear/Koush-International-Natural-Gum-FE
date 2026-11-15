@@ -164,24 +164,9 @@
   color: #777b74;
 }
 
-.file-upload-note {
-  color: #646d64;
-  font-size: 0.8rem;
-}
-
 .form-group select option {
   background-color: #ffffff;
   color: #17251b;
-}
-
-.form-group input[type="file"]::file-selector-button {
-  margin-right: 0.75rem;
-  padding: 0.45rem 0.7rem;
-  border: 1px solid #c9c8bd;
-  border-radius: 0.25rem;
-  color: #183a26;
-  background-color: #f3f0e5;
-  cursor: pointer;
 }
 
 /* Form Footer */

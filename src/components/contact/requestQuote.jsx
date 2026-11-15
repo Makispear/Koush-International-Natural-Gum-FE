@@ -16,11 +16,6 @@ export default function RequestQuote() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    const attachment = formData.get("attachment");
-    if (attachment instanceof File && attachment.size > 1_000_000) {
-      alert("Please upload a file smaller than 1 MB.");
-      return;
-    }
 
     setLoading(true);
     formData.append(
@@ -37,12 +32,15 @@ export default function RequestQuote() {
       });
 
       const data = await response.json();
-      if (data.success) {
+      if (response.ok && data.success) {
         setSubmitted(true);
       } else {
-        alert(
-          "Transmission failed. Please verify network connection and try again.",
-        );
+        const errorMessage =
+          data.message ??
+          data.body?.message ??
+          data.error ??
+          `Request failed with status ${response.status}.`;
+        alert(`Could not submit your inquiry: ${errorMessage}`);
       }
     } catch (error) {
       console.error("Error submitting RFQ:", error);
@@ -120,7 +118,6 @@ export default function RequestQuote() {
             <form
               onSubmit={handleSubmit}
               className="rfq-form"
-              encType="multipart/form-data"
             >
               <div className="rfq-form-grid">
                 <h3 className="form-section-heading full-width">
@@ -256,20 +253,6 @@ export default function RequestQuote() {
                   />
                 </div>
 
-                <div className="form-group full-width">
-                  <label htmlFor="attachment">
-                    Attach a Specification Sheet (Optional)
-                  </label>
-                  <input
-                    type="file"
-                    id="attachment"
-                    name="attachment"
-                    accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.png,.jpg,.jpeg"
-                  />
-                  <p className="file-upload-note">
-                    Maximum file size: 1 MB.
-                  </p>
-                </div>
               </div>
 
               <div className="rfq-form-footer">
