@@ -34,7 +34,7 @@ export default function Legacy() {
           <p className="legacy-description">
             Bridging Sudanese origin harvesting with industrial manufacturers,
             processors, and institutional buyers across global markets. We
-            specialize in elite-grade Gum Arabic, Frankincense, and vital
+            specialize in elite-grade Gum Arabic, and vital
             agricultural commodities.
           </p>
         </div>

@@ -20,7 +20,7 @@ export default function Hero() {
         </h2>
         <p className="hero-description">
           Bridging direct-origin Sudanese harvesting with global industrial
-          buyers. Delivering uncompromising purity in Gum Arabic, Frankincense,
+          buyers. Delivering uncompromising purity in Gum Arabic,
           and agricultural staples to international markets.
         </p>
 

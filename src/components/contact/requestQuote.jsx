@@ -170,8 +170,8 @@ export default function RequestQuote() {
                     <option value="Gum Arabic (Acacia Senegal - Grade 1)">
                       Gum Arabic (Acacia Senegal - Grade 1)
                     </option>
-                    <option value="Frankincense Gum / Tears">
-                      Frankincense Gum / Tears
+                    <option value="Gum Arabic (Talha)">
+                      Gum Arabic (Talha)
                     </option>
                     <option value="Sudan Sesame Seeds">
                       Sudan Sesame Seeds

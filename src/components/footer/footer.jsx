@@ -20,7 +20,7 @@ export default function Footer() {
             </div>
             <p className="footer-about-text">
               Direct origin sourcing and global container fulfillment of Grade-1
-              Gum Arabic, Frankincense, and elite agricultural commodities
+              Gum Arabic, and elite agricultural commodities
               backed by a 13-year operational legacy.
             </p>
             <div className="footer-origin-badge">
@@ -54,12 +54,12 @@ export default function Footer() {
             <ul className="footer-links-list">
               <li>
                 <span className="footer-static-link">
-                  Gum Arabic (hashab / Talha)
+                  Gum Arabic (hashab)
                 </span>
               </li>
               <li>
                 <span className="footer-static-link">
-                  Frankincense (Boswellia Resin)
+                  Gum Arabic (Talha)
                 </span>
               </li>
               <li>
