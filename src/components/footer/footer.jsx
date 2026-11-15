@@ -20,8 +20,8 @@ export default function Footer() {
             </div>
             <p className="footer-about-text">
               Direct origin sourcing and global container fulfillment of Grade-1
-              Gum Arabic, and elite agricultural commodities
-              backed by a 13-year operational legacy.
+              Gum Arabic, and elite agricultural commodities backed by a 13-year
+              operational legacy.
             </p>
             <div className="footer-origin-badge">
               <Globe className="w-4 h-4 text-amber-500" />
@@ -53,14 +53,10 @@ export default function Footer() {
             <h4 className="footer-heading">Export Catalog</h4>
             <ul className="footer-links-list">
               <li>
-                <span className="footer-static-link">
-                  Gum Arabic (hashab)
-                </span>
+                <span className="footer-static-link">Gum Arabic (hashab)</span>
               </li>
               <li>
-                <span className="footer-static-link">
-                  Gum Arabic (Talha)
-                </span>
+                <span className="footer-static-link">Gum Arabic (Talha)</span>
               </li>
               <li>
                 <span className="footer-static-link">Agricultural Staples</span>
@@ -93,7 +89,7 @@ export default function Footer() {
               </li>
               <li>
                 <Mail className="w-4 h-4 text-amber-500 shrink-0" />
-                <span>makiaboabidamaki@gmail.com</span>
+                <span>info@kuoshinternational.com</span>
               </li>
               <li>
                 <PhoneCallIcon className="w-4 h-4 text-amber-500 shrink-0" />

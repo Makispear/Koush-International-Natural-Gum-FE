@@ -68,10 +68,10 @@ export default function RequestQuote() {
               Prefer direct correspondence or need to share heavy spec sheets?
               Email our trade desk at{" "}
               <a
-                href="mailto:makiaboabidamaki@gmail.com"
+                href="mailto:info@kuoshinternational.com"
                 className="notice-link"
               >
-                makiaboabidamaki@gmail.com
+                info@kuoshinternational.com
               </a>
             </span>
           </div>
@@ -99,8 +99,8 @@ export default function RequestQuote() {
               <p className="success-email-note">
                 Need to attach documents or modify your request? Email us
                 directly at{" "}
-                <a href="mailto:makiaboabidamaki@gmail.com">
-                  makiaboabidamaki@gmail.com
+                <a href="mailto:info@kuoshinternational.com">
+                  info@kuoshinternational.com
                 </a>
               </p>
               <button
