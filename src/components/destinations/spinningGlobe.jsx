@@ -110,7 +110,7 @@ export default function SpinningGlobeDestinations() {
       lat: 40.7128,
       lng: -74.006,
       type: "destination",
-      color: "#c53927",
+      color: "#c59b27",
       size: 1.2,
     },
     {
