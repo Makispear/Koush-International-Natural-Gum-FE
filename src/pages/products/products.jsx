@@ -1,11 +1,22 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import "./products.css";
 
 const flagshipCommodities = [
   {
     name: "Gum Arabic",
-    image: "/pic7.png",
-    varieties: ["Hashab (Acacia senegal)", "Talha (Acacia seyal)"],
+    varieties: [
+      {
+        name: "Hashab",
+        botanicalName: "Acacia senegal",
+        image: "/pic7.png",
+      },
+      {
+        name: "Talha",
+        botanicalName: "Acacia seyal",
+        image: "/pic1.jpeg",
+      },
+    ],
     forms: ["Raw gum", "Cleaned gum", "Sorted & graded", "Kibbled"],
     specifications: "Grades and particle sizes tailored to buyer requirements.",
     packaging: "50 kg bags; custom logo printing available.",
@@ -34,15 +45,20 @@ const supplementaryCommodities = [
 ];
 
 function ProductCard({ item, flagship = false }) {
+  const [selectedVariety, setSelectedVariety] = useState(
+    flagship ? item.varieties[0] : null,
+  );
+  const productImage = flagship ? selectedVariety.image : item.image;
+
   return (
     <article
       className={`product-card${flagship ? " flagship-card" : " supplementary-card"}`}
     >
-      {item.image && (
+      {productImage && (
         <div className="product-image-container">
           <img
-            src={item.image}
-            alt={`${item.name} product`}
+            src={productImage}
+            alt={`${item.name}${flagship ? ` (${selectedVariety.name})` : ""} product`}
             className="product-thumb"
           />
         </div>
@@ -54,12 +70,25 @@ function ProductCard({ item, flagship = false }) {
         )}
         {flagship && (
           <div className="product-detail">
-            <h4>Varieties</h4>
-            <ul className="product-chips">
+            <h4>Choose variety</h4>
+            <div
+              className="product-variety-options"
+              role="group"
+              aria-label="Gum Arabic variety"
+            >
               {item.varieties.map((variety) => (
-                <li key={variety}>{variety}</li>
+                <button
+                  key={variety.name}
+                  type="button"
+                  className="product-variety-option"
+                  aria-pressed={selectedVariety.name === variety.name}
+                  onClick={() => setSelectedVariety(variety)}
+                >
+                  {variety.name}
+                  <span>{variety.botanicalName}</span>
+                </button>
               ))}
-            </ul>
+            </div>
           </div>
         )}
         <div className="product-detail">
