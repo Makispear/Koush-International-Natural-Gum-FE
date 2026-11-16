@@ -30,10 +30,10 @@ export default function ClosingAssurance() {
                 Institutional-Grade Trade Guarantee
               </h2>
               <p className="closing-subtitle">
-                Backed by 13 years of operational mastery, every metric ton
-                dispatched from our facilities is governed by strict
-                international export standards, verified purity thresholds, and
-                complete legal accountability.
+                Backed by 13 years of export experience, every metric ton
+                shipped from our facilities meets strict international export
+                standards, verified purity levels, and full regulatory
+                compliance.
               </p>
             </div>
 
@@ -51,7 +51,7 @@ export default function ClosingAssurance() {
                   <p>
                     Every shipment is accompanied by an official Certificate of
                     Analysis, guaranteeing moisture limits, mechanical purity,
-                    and grade-1 botanical specifications.
+                    and top-grade botanical specifications.
                   </p>
                 </div>
               </div>
@@ -66,9 +66,9 @@ export default function ClosingAssurance() {
                     <CheckCircle2 className="w-4 h-4 text-amber-500" />
                   </div>
                   <p>
-                    A decade-plus legacy of reliable container allocation and
-                    fulfillment across major trade corridors in Europe, Asia,
-                    the Middle East, and North America.
+                    More than 13 years of experience coordinating reliable
+                    container shipments across Europe, Asia, the Middle East,
+                    and North America.
                   </p>
                 </div>
               </div>
@@ -79,7 +79,7 @@ export default function ClosingAssurance() {
                 </div>
                 <div className="clause-content">
                   <div className="clause-header-row">
-                    <h3>Customs & Incoterms Compliance</h3>
+                    <h3>Customs & International Commercial Terms Compliance</h3>
                     <CheckCircle2 className="w-4 h-4 text-amber-500" />
                   </div>
                   <p>

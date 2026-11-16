@@ -110,9 +110,17 @@ export default function SpinningGlobeDestinations() {
       lat: 40.7128,
       lng: -74.006,
       type: "destination",
-      color: "#c59b27",
+      color: "#c53927",
       size: 1.2,
     },
+    {
+      name: "Brazil (Santos / Rio de Janeiro)",
+      lat: -23.5505,
+      lng: -46.6333,
+      type: "destination",
+      color: "#ffffff",
+      size: 1,
+    }
   ];
 
   useEffect(() => {
@@ -135,11 +143,10 @@ export default function SpinningGlobeDestinations() {
       <div className="globe-container">
         <div className="globe-header-content">
           <span className="globe-tag">Global Trade Intelligence</span>
-          <h2 className="globe-heading">Interactive Global Export Corridors</h2>
+          <h2 className="globe-heading">Global Export Network</h2>
           <p className="globe-sub">
-            Drag to rotate our operational trade network. Spanning 12+
-            international jurisdictions from Sudan origin to global
-            ports.
+            Kuosh international Connects the source in Sudan directly to
+            international markets and global ports worldwide.
           </p>
         </div>
 
@@ -173,7 +180,7 @@ export default function SpinningGlobeDestinations() {
             pointLabel={(d) => `
               <div style="background: #0d2315; color: #fff; padding: 8px 12px; border: 1px solid #c59b27; border-radius: 4px; font-family: sans-serif; font-size: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
                 <strong style="color: #f3e5ab;">${d.name}</strong><br/>
-                <span style="color: #a8a29e; font-size: 10px;">Port Sudan Direct Export Corridor</span>
+                <span style="color: #a8a29e; font-size: 10px;">Port Sudan Direct Export Network</span>
               </div>
             `}
           />
@@ -182,11 +189,11 @@ export default function SpinningGlobeDestinations() {
         <div className="globe-legend">
           <div className="legend-item">
             <span className="legend-dot origin"></span>
-            <span>Origin Headquarters (Omdurman - Sudan)</span>
+            <span>Headquarters and Operations</span>
           </div>
           <div className="legend-item">
             <span className="legend-dot market"></span>
-            <span>Active Export Destination Market</span>
+            <span>Active Export Destination Markets</span>
           </div>
         </div>
 

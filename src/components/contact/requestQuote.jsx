@@ -58,7 +58,8 @@ export default function RequestQuote() {
           <div className="notice-item">
             <HelpCircle className="notice-icon" size={20} />
             <span>
-              Have questions about Incoterms, MOQs, or CoA? Check our{" "}
+              Have questions about shipping terms, minimum order quantities, or
+              certificates of analysis? Check our{" "}
               <a href="#faq-section" className="notice-link">
                 FAQs below
               </a>{" "}
@@ -115,10 +116,7 @@ export default function RequestQuote() {
               </button>
             </div>
           ) : (
-            <form
-              onSubmit={handleSubmit}
-              className="rfq-form"
-            >
+            <form onSubmit={handleSubmit} className="rfq-form">
               <div className="rfq-form-grid">
                 <h3 className="form-section-heading full-width">
                   Contact Information
@@ -231,7 +229,9 @@ export default function RequestQuote() {
                 </div>
 
                 <div className="form-group full-width">
-                  <label htmlFor="incoterm">Preferred Incoterm</label>
+                  <label htmlFor="incoterm">
+                    Preferred International Commercial Terms
+                  </label>
                   <select id="incoterm" name="incoterm" defaultValue="">
                     <option value="">Select, if known...</option>
                     <option value="CIF">CIF</option>
@@ -252,7 +252,6 @@ export default function RequestQuote() {
                     placeholder="Sourcing, packaging, documentation, or shipping requirements"
                   />
                 </div>
-
               </div>
 
               <div className="rfq-form-footer">

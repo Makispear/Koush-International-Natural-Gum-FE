@@ -16,7 +16,7 @@ export default function Hero() {
           KUOSH INTERNATIONAL
         </h1>
         <h2 className="hero-subtitle">
-          EXPORTS OF NATURAL GUM & ELITE SUDANESE COMMODITIES
+          SPECIALIZED IN SUDAN’S WORLD-LEADING HARVESTS: GUM ARABIC
         </h2>
         <p className="hero-description">
           Bridging direct-origin Sudanese harvesting with global industrial
@@ -41,7 +41,7 @@ export default function Hero() {
         <div className="hero-metrics-grid">
           <div className="hero-metric-item">
             <span className="hero-metric-number">13 Years</span>
-            <span className="hero-metric-label">Operational Legacy</span>
+            <span className="hero-metric-label">Export Experience</span>
           </div>
           <div className="hero-metric-item">
             <span className="hero-metric-number">Global Reach</span>
@@ -50,8 +50,8 @@ export default function Hero() {
             </span>
           </div>
           <div className="hero-metric-item">
-            <span className="hero-metric-number">Grade 1</span>
-            <span className="hero-metric-label">Direct Origin Sourcing</span>
+            <span className="hero-metric-number">Top-Grade</span>
+            <span className="hero-metric-label">Direct from Origin Sourcing</span>
           </div>
         </div>
       </div>

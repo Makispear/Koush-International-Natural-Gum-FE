@@ -17,12 +17,11 @@ export default function Navbar() {
           <div className="navbar-top-left">
             <Globe className="w-3.5 h-3.5 text-amber-500" />
             <span>
-              Direct Origin Exporter • Khartoum, Sudan & International
-              Operations
+              Headquartered in Khartoum, Sudan with Global Export Operations
             </span>
           </div>
           <div className="navbar-top-right">
-            <span>13 Years operating</span>
+            <span>13 years exporting</span>
           </div>
         </div>
       </div>
@@ -47,13 +46,13 @@ export default function Navbar() {
 
           <nav className={`navbar-links ${isOpen ? "active" : ""}`}>
             <Link to="/" onClick={closeMenu}>
-              Home
+              Main Page
             </Link>
             <Link to="/products" onClick={closeMenu}>
               Products
             </Link>
-            <Link to="/legacy" onClick={closeMenu}>
-              Legacy
+            <Link to="/about" onClick={closeMenu}>
+              About Us
             </Link>
             <Link to="/contact" className="navbar-cta" onClick={closeMenu}>
               Request Quote

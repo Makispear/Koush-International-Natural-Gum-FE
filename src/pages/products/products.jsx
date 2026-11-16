@@ -3,59 +3,30 @@ import "./products.css";
 
 const flagshipCommodities = [
   {
-    name: "Gum Arabic (Hashab)",
-    category: "Flagship Product",
+    name: "Gum Arabic",
     image: "/pic7.png",
-    botanicalName: "Acacia senegal",
-    aliases: ["Gum Acacia", "Senegal gum", "Senegalia senegal"],
-    forms: [
-      "Raw gum",
-      "Cleaned gum",
-      "Sorted & graded",
-      "Kibbled",
-      "Powder",
-      "Spray-dried",
-    ],
+    varieties: ["Hashab (Acacia senegal)", "Talha (Acacia seyal)"],
+    forms: ["Raw gum", "Cleaned gum", "Sorted & graded", "Kibbled"],
     specifications: "Grades and particle sizes tailored to buyer requirements.",
     packaging: "50 kg bags; custom logo printing available.",
-  },
-  {
-    name: "Gum Arabic (Talha)",
-    category: "Flagship Product",
-    image: "/pic1.jpeg",
-    botanicalName: "Acacia seyal",
-    aliases: ["Gum Arabic (Talha type)", "Seyal gum", "Samoq Alloban"],
-    forms: [
-      "Raw gum",
-      "Cleaned gum",
-      "Sorted & graded",
-      "Kibbled",
-    ],
-    specifications: "Grades and particle sizes tailored to buyer requirements.",
   },
 ];
 
 const supplementaryCommodities = [
   {
     name: "Sudan Sesame Seeds",
-    botanicalName: "Sesamum indicum",
-    aliases: ["Sesame", "Benne", "Til", "Sim-sim"],
     varieties: ["White", "Mixed Humera"],
     forms: ["Cleaned seeds"],
     specifications: "Export grades; sorted and cleaned.",
   },
   {
     name: "Hibiscus Flowers",
-    botanicalName: "Hibiscus sabdariffa",
-    aliases: ["Roselle", "Karkadeh", "Bissap", "Flor de Jamaica", "Sorrel"],
     varieties: ["Grade A"],
     forms: ["Whole dried calyces", "Cleaned & sifted"],
     specifications: "Deep crimson color.",
   },
   {
     name: "Peanuts",
-    botanicalName: "Arachis hypogaea",
-    aliases: ["Groundnuts", "Fool Sudani"],
     varieties: ["Sudanese groundnuts"],
     forms: ["In-shell", "Kernels"],
     specifications: "High kernel count; export-standard bagging.",
@@ -77,20 +48,20 @@ function ProductCard({ item, flagship = false }) {
         </div>
       )}
       <div className="product-card-content">
-        <span className="product-category">{item.category}</span>
         <h3 className="product-name">{item.name}</h3>
-        <p className="product-botanical">{item.botanicalName}</p>
         {flagship && (
           <p className="product-origin">Origin: Kordofan Region, Sudan</p>
         )}
-        <div className="product-detail">
-          <h4>Also known as</h4>
-          <ul className="product-chips product-aliases">
-            {item.aliases.map((alias) => (
-              <li key={alias}>{alias}</li>
-            ))}
-          </ul>
-        </div>
+        {flagship && (
+          <div className="product-detail">
+            <h4>Varieties</h4>
+            <ul className="product-chips">
+              {item.varieties.map((variety) => (
+                <li key={variety}>{variety}</li>
+              ))}
+            </ul>
+          </div>
+        )}
         <div className="product-detail">
           <h4>{flagship ? "Available forms" : "Variety"}</h4>
           <ul className="product-chips">
@@ -112,7 +83,9 @@ function ProductCard({ item, flagship = false }) {
         <div className="product-specifications">
           <h4>Specifications</h4>
           <p>{item.specifications}</p>
-          {item.packaging && <p className="product-packaging">{item.packaging}</p>}
+          {item.packaging && (
+            <p className="product-packaging">{item.packaging}</p>
+          )}
         </div>
       </div>
     </article>
@@ -127,8 +100,8 @@ export default function Products() {
           <span className="products-tag">Verified Export Catalog</span>
           <h1 className="products-title">Sudanese Products</h1>
           <p className="products-description">
-            Export-ready gums and agricultural commodities, sourced directly from
-            Sudan.
+            Export-ready gums and agricultural commodities, sourced directly
+            from Sudan.
           </p>
         </div>
         <div className="products-header-action">
@@ -139,13 +112,13 @@ export default function Products() {
       </div>
 
       <p className="samples-notice">
-        Product samples are available for all catalog items. Contact us to request
+        Product samples are available for all items below. Contact us to request
         samples.
       </p>
 
       <section className="product-section" aria-labelledby="flagship-heading">
         <div className="flagship-section-heading">
-          <h2 id="flagship-heading">Flagship Products</h2>
+          <h2 id="flagship-heading">Flagship Product</h2>
         </div>
         <div className="products-grid flagship-grid">
           {flagshipCommodities.map((item) => (
@@ -166,10 +139,7 @@ export default function Products() {
         </div>
         <div className="products-grid supplementary-grid">
           {supplementaryCommodities.map((item) => (
-            <ProductCard
-              key={item.name}
-              item={{ ...item, category: "Supplementary Product" }}
-            />
+            <ProductCard key={item.name} item={item} />
           ))}
         </div>
       </section>

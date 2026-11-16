@@ -1,5 +1,10 @@
 /* src/App.jsx */
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import ScrollToTop from "./components/utils/ScrollToTop";
 import Navbar from "./components/navbar/navbar";
 import Footer from "./components/footer/footer";
@@ -24,7 +29,8 @@ export default function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/contact" element={<RequestQuote />} />
             <Route path="/quote" element={<RequestQuote />} />
-            <Route path="/legacy" element={<Legacy />} />
+            <Route path="/about" element={<Legacy />} />
+            <Route path="/legacy" element={<Navigate to="/about" replace />} />
           </Routes>
         </main>
         <Footer />

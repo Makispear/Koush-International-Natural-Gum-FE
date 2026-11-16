@@ -14,6 +14,7 @@ export default function DestinationTicker() {
     "Tunis",
     "Morocco",
     "United States",
+    "Brazil"
   ];
 
   // Duplicate array to ensure seamless infinite looping animation
@@ -21,7 +22,7 @@ export default function DestinationTicker() {
 
   return (
     <div className="destination-ticker-wrapper">
-      <div className="ticker-label">Export Corridors:</div>
+      <div className="ticker-label">Export Network:</div>
       <div className="ticker-track-container">
         <div className="ticker-track">
           {duplicatedDestinations.map((country, index) => (

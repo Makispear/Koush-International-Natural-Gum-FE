@@ -19,9 +19,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="footer-about-text">
-              Direct origin sourcing and global container fulfillment of Grade-1
-              Gum Arabic, and elite agricultural commodities backed by a 13-year
-              operational legacy.
+              We source and export top-grade Gum Arabic and agricultural
+              commodities directly from origin.
             </p>
             <div className="footer-origin-badge">
               <Globe className="w-4 h-4 text-amber-500" />
@@ -34,13 +33,13 @@ export default function Footer() {
             <h4 className="footer-heading">Navigation</h4>
             <ul className="footer-links-list">
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Main Page</Link>
               </li>
               <li>
                 <Link to="/products">Products & Specifications</Link>
               </li>
               <li>
-                <Link to="/legacy">Our 13-Year Legacy</Link>
+                <Link to="/about">About Us</Link>
               </li>
               <li>
                 <Link to="/contact">Request Quotation (RFQ)</Link>
@@ -75,7 +74,7 @@ export default function Footer() {
             <ul className="footer-contact-list">
               <li>
                 <Globe className="w-4 h-4 text-amber-500 shrink-0" />
-                <span>U.S.-based operations</span>
+                <span>U.S based operations</span>
               </li>
               <li>
                 <MapPin className="w-4 h-4 text-amber-500 shrink-0" />
@@ -111,7 +110,9 @@ export default function Footer() {
             <span className="footer-legal-item">
               ISO / HACCP Standard Compliance
             </span>
-            <span className="footer-legal-item">Incoterms: FOB / CIF</span>
+            <span className="footer-legal-item">
+              International Commercial Terms: FOB / CIF
+            </span>
           </div>
         </div>
       </div>

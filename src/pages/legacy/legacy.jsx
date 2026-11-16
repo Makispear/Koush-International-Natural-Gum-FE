@@ -29,8 +29,8 @@ export default function Legacy() {
       {/* Header Section */}
       <div className="legacy-header-wrapper">
         <div className="legacy-header">
-          <span className="legacy-tag">Heritage & Authority</span>
-          <h1 className="legacy-title">The Kosh International Legacy</h1>
+          <span className="legacy-tag">About Us</span>
+          <h1 className="legacy-title">About Kuosh International</h1>
           <p className="legacy-description">
             Bridging Sudanese origin harvesting with industrial manufacturers,
             processors, and institutional buyers across global markets. We
@@ -48,7 +48,7 @@ export default function Legacy() {
       {/* Main Narrative Block */}
       <div className="legacy-story-container">
         <div className="legacy-story-card">
-          <h2>Our Origin Story</h2>
+          <h2>Our Story</h2>
           <p>
             Kosh International was established with a singular mission: to
             connect global industrial supply chains directly to the rich,
