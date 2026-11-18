@@ -9,51 +9,56 @@ export default function FaqSection() {
     {
       question: "What varieties of Gum Arabic do you supply?",
       answer:
-        "Hashab (Acacia senegal) and Talha (Acacia seyal).",
+        "We supply Hashab (Acacia senegal) and Talha (Acacia seyal). If you are unsure which to request, include your intended use and our trade desk can help you identify the variety to quote.",
     },
     {
-      question: "What forms of Gum Arabic are available?",
+      question: "Which forms and specifications can I request?",
       answer:
-        "Raw, cleaned, sorted and graded, kibbled, powder, and spray-dried.",
+        "The catalogue lists raw, cleaned, sorted and graded, and kibbled gum. Include your preferred form, grade, and particle size; availability and specifications are confirmed for each order.",
     },
     {
       question: "What are your minimum order quantities?",
       answer:
-        "Bulk orders are container-based: approximately 16 MT for a 20-foot container or 26 MT for a 40-foot container.",
+        "As a planning guide, a 20-foot container holds approximately 16 MT and a 40-foot container approximately 26 MT. Final loading quantity depends on the product and packing configuration, so share your target volume and we will confirm what fits.",
     },
     {
       question: "What packaging options do you offer?",
       answer:
-        "50 kg bags, with buyer and Kuosh International logos available.",
+        "The standard offering is 50 kg bags. Custom logo printing can be requested; bag and labeling details are confirmed for the selected product and order.",
     },
     {
-      question: "Can buyers request samples?",
+      question: "Can I request a sample, and what size is it?",
       answer:
-        "Yes. 150–250 g samples are available on request.",
+        "Yes. Samples are typically 150–250 g. Tell us the product or variety and destination; our trade desk will confirm sample availability and delivery arrangements.",
     },
     {
       question: "What export documentation do you provide?",
       answer:
-        "Available documents include a CoA, Certificate of Origin, and commercial invoice. Phytosanitary documents depend on destination.",
+        "Depending on the product and shipment, documents can include a Certificate of Analysis (CoA), Certificate of Origin, and commercial invoice. Phytosanitary documents depend on destination requirements. Share your destination country and port so we can confirm the applicable list.",
     },
     {
-      question: "What shipping arrangements do you support?",
+      question: "Which shipping terms can I request?",
       answer:
-        "CIF is available. Other arrangements can be discussed by destination.",
+        "FOB and CIF can be discussed; other terms depend on the route and order. Include your destination port and country so the quotation can specify the applicable Incoterm and freight arrangement.",
     },
     {
       question: "What is your order lead time?",
       answer:
-        "Allow at least three months for bulk orders.",
+        "Plan for at least three months for bulk orders. The specific schedule is confirmed for each order; include your destination and target ship date when you enquire.",
+    },
+    {
+      question: "What do I need to request a quotation?",
+      answer:
+        "An email address is enough to start. For a more specific quotation, include the product and variety, form or grade, quantity, destination port or country, and target timing if known. Send what you have; our trade desk can follow up on missing details.",
     },
   ];
 
-  const toggleFaq = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   return (
-    <section id="faq-section" className="faq-section">
+    <section
+      id="faq-section"
+      className="faq-section"
+      aria-labelledby="faq-heading"
+    >
       <div className="faq-container">
         {/* Section Header */}
         <div className="faq-header">
@@ -61,10 +66,12 @@ export default function FaqSection() {
             <HelpCircle className="w-4 h-4 text-amber-500" />
             <span>Procurement Support</span>
           </div>
-          <h2 className="faq-heading">Frequently Asked Questions</h2>
+          <h2 className="faq-heading" id="faq-heading">
+            Frequently Asked Questions
+          </h2>
           <p className="faq-sub">
-            Clear, institutional answers regarding our B2B export protocols,
-            container specifications, and fulfillment terms.
+            Practical guidance for choosing a product, requesting a quotation,
+            and planning a shipment.
           </p>
         </div>
 
@@ -72,12 +79,19 @@ export default function FaqSection() {
         <div className="faq-accordion">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
+            const answerId = `faq-answer-${index}`;
             return (
               <div key={index} className={`faq-item ${isOpen ? "open" : ""}`}>
                 <button
+                  type="button"
                   className="faq-question-btn"
-                  onClick={() => toggleFaq(index)}
+                  onClick={() =>
+                    setOpenIndex((currentIndex) =>
+                      currentIndex === index ? null : index,
+                    )
+                  }
                   aria-expanded={isOpen}
+                  aria-controls={answerId}
                 >
                   <span className="faq-question-text">{faq.question}</span>
                   <ChevronDown
@@ -85,8 +99,10 @@ export default function FaqSection() {
                   />
                 </button>
                 <div
+                  id={answerId}
                   className="faq-answer-wrapper"
-                  style={{ maxHeight: isOpen ? "300px" : "0px" }}
+                  aria-hidden={!isOpen}
+                  inert={!isOpen}
                 >
                   <div className="faq-answer-content">
                     <p>{faq.answer}</p>

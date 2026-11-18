@@ -47,23 +47,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Core Commodities */}
+          {/* Column 3: Product Catalogue */}
           <div className="footer-col">
             <h4 className="footer-heading">Export Catalog</h4>
             <ul className="footer-links-list">
               <li>
-                <span className="footer-static-link">Gum Arabic (hashab)</span>
-              </li>
-              <li>
-                <span className="footer-static-link">Gum Arabic (Talha)</span>
-              </li>
-              <li>
-                <span className="footer-static-link">Agricultural Staples</span>
-              </li>
-              <li>
-                <span className="footer-static-link">
-                  Bulk Container Allocation
-                </span>
+                <Link to="/products">View current product catalogue</Link>
               </li>
             </ul>
           </div>
@@ -108,10 +97,10 @@ export default function Footer() {
           </p>
           <div className="footer-legal-links">
             <span className="footer-legal-item">
-              ISO / HACCP Standard Compliance
+              Order-specific documentation available
             </span>
             <span className="footer-legal-item">
-              International Commercial Terms: FOB / CIF
+              FOB / CIF terms discussed per order
             </span>
           </div>
         </div>

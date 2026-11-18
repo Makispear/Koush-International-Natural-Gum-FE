@@ -3,105 +3,108 @@ import {
   ShieldCheck,
   Award,
   FileCheck,
-  CheckCircle2,
   ArrowRight,
 } from "lucide-react";
 import "./closingAssurance.css";
 
 export default function ClosingAssurance() {
   return (
-    <section className="closing-assurance-section">
+    <section
+      className="closing-assurance-section"
+      aria-labelledby="trade-assurance-heading"
+    >
       <div className="closing-container">
-        {/* Certificate Rosette / Seal Silhouette Wrapper */}
         <div className="certification-seal-silhouette">
-          {/* Inner Content Container */}
           <div className="certificate-inner-content">
             <div className="certificate-seal-header">
               <div className="seal-emblem">
-                <ShieldCheck className="w-8 h-8 text-amber-400" />
+                <ShieldCheck size={23} aria-hidden="true" />
+              </div>
+              <div className="certificate-doc-brand">
+                <span>Kuosh International</span>
+                <span>Export assurance</span>
               </div>
               <span className="certificate-id-label">
-                OFFICIAL EXPORT COMPLIANCE SEAL • REF: KUOSH-REG-2026
+                Product <span>·</span> Quality <span>·</span> Documentation
               </span>
             </div>
 
             <div className="certificate-title-group">
-              <h2 className="closing-title">
-                Institutional-Grade Trade Guarantee
+              <span className="assurance-eyebrow">A clear standard, from origin to shipment</span>
+              <h2 id="trade-assurance-heading" className="closing-title">
+                Trade assurance, clearly documented.
               </h2>
               <p className="closing-subtitle">
-                Backed by 13 years of export experience, every metric ton
-                shipped from our facilities meets strict international export
-                standards, verified purity levels, and full regulatory
-                compliance.
+                Our trade desk helps confirm product specifications, supporting
+                documents, and shipping details for each order and destination.
+                With 13+ years of export experience, we make the next steps
+                easier to understand.
               </p>
             </div>
 
-            {/* Certificate Clauses Grid */}
             <div className="certificate-clauses-grid">
-              <div className="clause-item">
-                <div className="clause-icon-box">
-                  <FileCheck className="w-6 h-6 text-amber-400" />
+              <article className="clause-item">
+                <div className="clause-topline">
+                  <div className="clause-icon-box">
+                    <FileCheck size={19} aria-hidden="true" />
+                  </div>
+                  <span className="clause-index">01</span>
                 </div>
                 <div className="clause-content">
-                  <div className="clause-header-row">
-                    <h3>Verified Purity & CoA Guarantee</h3>
-                    <CheckCircle2 className="w-4 h-4 text-amber-500" />
-                  </div>
+                  <h3>Quality &amp; Certificate of Analysis</h3>
                   <p>
-                    Every shipment is accompanied by an official Certificate of
-                    Analysis, guaranteeing moisture limits, mechanical purity,
-                    and top-grade botanical specifications.
+                    We confirm applicable quality records against the order
+                    specifications. A Certificate of Analysis can document
+                    parameters such as moisture, mechanical purity, and
+                    botanical details when applicable.
                   </p>
                 </div>
-              </div>
+              </article>
 
-              <div className="clause-item">
-                <div className="clause-icon-box">
-                  <Award className="w-6 h-6 text-amber-400" />
+              <article className="clause-item">
+                <div className="clause-topline">
+                  <div className="clause-icon-box">
+                    <Award size={19} aria-hidden="true" />
+                  </div>
+                  <span className="clause-index">02</span>
                 </div>
                 <div className="clause-content">
-                  <div className="clause-header-row">
-                    <h3>13-Year Proven Track Record</h3>
-                    <CheckCircle2 className="w-4 h-4 text-amber-500" />
-                  </div>
+                  <h3>13+ years of export experience</h3>
                   <p>
-                    More than 13 years of experience coordinating reliable
-                    container shipments across Europe, Asia, the Middle East,
-                    and North America.
+                    We coordinate container shipments for buyers across
+                    Europe, Asia, the Middle East, and North America.
                   </p>
                 </div>
-              </div>
+              </article>
 
-              <div className="clause-item">
-                <div className="clause-icon-box">
-                  <ShieldCheck className="w-6 h-6 text-amber-400" />
+              <article className="clause-item">
+                <div className="clause-topline">
+                  <div className="clause-icon-box">
+                    <ShieldCheck size={19} aria-hidden="true" />
+                  </div>
+                  <span className="clause-index">03</span>
                 </div>
                 <div className="clause-content">
-                  <div className="clause-header-row">
-                    <h3>Customs & International Commercial Terms Compliance</h3>
-                    <CheckCircle2 className="w-4 h-4 text-amber-500" />
-                  </div>
+                  <h3>Export documentation</h3>
                   <p>
-                    Complete documentation packages including phytosanitary
-                    certificates and bills of lading structured for seamless
-                    customs clearance worldwide.
+                    Supporting documents may include phytosanitary certificates
+                    and bills of lading. Requirements vary by order and
+                    destination.
                   </p>
                 </div>
-              </div>
+              </article>
             </div>
 
-            {/* Execution Action Bar */}
             <div className="certificate-footer-banner">
               <div className="footer-banner-text">
-                <h4>Ready to secure your bulk container allocation?</h4>
+                <h3>Planning a shipment?</h3>
                 <p>
-                  Engage our trade desk for formal quotation, current
-                  availability, and contract terms.
+                  Share your product and destination. We’ll help you work
+                  through availability and a quotation.
                 </p>
               </div>
               <Link to="/contact" className="closing-cta-btn">
-                Submit Request for Quotation <ArrowRight className="w-4 h-4" />
+                Request a quotation <ArrowRight size={17} aria-hidden="true" />
               </Link>
             </div>
           </div>

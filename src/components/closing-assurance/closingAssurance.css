@@ -1,9 +1,10 @@
-/* src/components/closing-assurance/closingAssurance.css */
 .closing-assurance-section {
-  background-color: #040e07;
-  padding: 6rem 1.5rem;
-  border-top: 1px solid rgba(197, 155, 39, 0.3);
   position: relative;
+  padding: clamp(4.5rem, 8vw, 7rem) 1.5rem;
+  border-top: 1px solid rgba(235, 201, 125, 0.16);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(197, 149, 49, 0.085), transparent 48%),
+    #040c08;
 }
 
 .closing-container {
@@ -11,247 +12,365 @@
   margin: 0 auto;
 }
 
-/* Certification Seal Rosette / Stamp Silhouette */
 .certification-seal-silhouette {
-  background: linear-gradient(145deg, #fffdf7 0%, #f5f2e8 100%);
-  border: 1px solid rgba(197, 155, 39, 0.45);
-  border-radius: 1.5rem;
   position: relative;
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.35),
-    inset 0 0 40px rgba(197, 155, 39, 0.08);
   overflow: hidden;
+  border: 1px solid rgba(144, 117, 59, 0.32);
+  border-radius: 0.55rem;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 7px,
+      rgba(119, 96, 48, 0.012) 8px
+    ),
+    linear-gradient(145deg, #fffef9, #f7f4e9);
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.24),
+    0 2px 6px rgba(0, 0, 0, 0.08);
+  animation: document-settle 760ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
 }
 
-/* Decorative Stamp Edge Effect using CSS radial pattern */
 .certification-seal-silhouette::before {
-  content: "";
   position: absolute;
-  inset: 8px;
-  border: 1px dashed rgba(152, 119, 28, 0.35);
-  border-radius: 1.2rem;
+  inset: 9px;
+  border: 1px solid rgba(144, 117, 59, 0.15);
+  border-radius: 0.32rem;
+  content: "";
   pointer-events: none;
 }
 
 .certificate-inner-content {
-  padding: 4rem 3rem;
   position: relative;
-  z-index: 2;
+  z-index: 1;
+  padding: clamp(1.5rem, 5vw, 4rem);
 }
 
-/* Official Seal Header Stamp */
 .certificate-seal-header {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  margin-bottom: 2rem;
-  text-align: center;
+  gap: 0.8rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid rgba(31, 57, 39, 0.17);
 }
 
 .seal-emblem {
-  background-color: #f3edd8;
-  border: 2px solid rgba(197, 155, 39, 0.5);
-  padding: 1rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0.75rem;
-  box-shadow: 0 0 25px rgba(197, 155, 39, 0.15);
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid rgba(144, 117, 59, 0.36);
+  border-radius: 4px;
+  background: #f3eddb;
+  color: #806316;
 }
 
-.seal-emblem svg {
-  color: #806316;
+.certificate-doc-brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.35;
+  text-align: left;
+}
+
+.certificate-doc-brand span:first-child {
+  color: #1a3323;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.certificate-doc-brand span:last-child {
+  margin-top: 0.12rem;
+  color: #777362;
+  font-size: 0.67rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .certificate-id-label {
-  font-family: monospace;
-  font-size: 0.75rem;
-  color: #705710;
-  letter-spacing: 0.25em;
+  color: #75643b;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-align: right;
   text-transform: uppercase;
-  background-color: #f3edd8;
-  padding: 0.35rem 1.25rem;
-  border-radius: 9999px;
-  border: 1px solid rgba(197, 155, 39, 0.4);
+}
+
+.certificate-id-label span {
+  padding: 0 0.25rem;
+  color: #b38a39;
 }
 
 .certificate-title-group {
-  text-align: center;
   max-width: 48rem;
-  margin: 0 auto 3.5rem auto;
+  margin: clamp(1.75rem, 4vw, 2.8rem) auto clamp(1.75rem, 4vw, 2.5rem);
+  text-align: center;
+}
+
+.assurance-eyebrow {
+  display: inline-block;
+  margin-bottom: 0.65rem;
+  color: #8a7136;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 
 .closing-title {
-  font-size: clamp(2rem, 3.5vw, 2.75rem);
-  font-weight: 800;
-  color: #102719;
-  margin-bottom: 1rem;
-  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+  color: #153322;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.6vw, 2.7rem);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 1.12;
+  text-wrap: balance;
 }
 
 .closing-subtitle {
-  font-size: 1.05rem;
-  color: #586258;
-  line-height: 1.6;
+  max-width: 43rem;
+  margin: 0 auto;
+  color: #5d6258;
+  font-size: 0.95rem;
+  line-height: 1.75;
 }
 
-/* Clauses Layout */
 .certificate-clauses-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 1.4rem;
 }
 
 .clause-item {
-  background-color: #ffffff;
-  border: 1px solid #e0ddcf;
-  border-radius: 0.5rem;
-  padding: 1.75rem 2rem;
   display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
+  min-width: 0;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.2rem;
+  border: 1px solid rgba(82, 88, 69, 0.17);
+  border-radius: 0.35rem;
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow: 0 3px 12px rgba(31, 42, 30, 0.025);
+  animation: clause-arrive 620ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
   transition:
-    border-color 0.3s ease,
-    background-color 0.3s ease;
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+.clause-item:nth-child(2) {
+  animation-delay: 90ms;
+}
+
+.clause-item:nth-child(3) {
+  animation-delay: 180ms;
+}
+
+.clause-item:hover {
+  transform: translateY(-3px);
+  border-color: rgba(144, 117, 59, 0.38);
+  box-shadow: 0 10px 24px rgba(31, 42, 30, 0.075);
+}
+
+.clause-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .clause-icon-box {
-  background-color: #f3edd8;
-  border: 1px solid rgba(197, 155, 39, 0.35);
-  padding: 0.85rem;
-  border-radius: 0.375rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid rgba(144, 117, 59, 0.28);
+  border-radius: 4px;
+  background: #f5f0e2;
+  color: #806316;
 }
 
-.clause-icon-box svg {
-  color: #806316;
+.clause-index {
+  color: #a29a83;
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.clause-content h3 {
+  margin-bottom: 0.45rem;
+  color: #203b29;
+  font-family: var(--font-display);
+  font-size: 0.94rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.4;
 }
 
 .clause-content {
-  flex: 1;
-}
-
-.clause-header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-
-.clause-header-row h3 {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #183a26;
-}
-
-.clause-header-row svg {
-  color: #806316;
+  text-align: left;
 }
 
 .clause-content p {
-  font-size: 0.95rem;
-  color: #596258;
-  line-height: 1.6;
+  color: #62665d;
+  font-size: 0.82rem;
+  line-height: 1.65;
 }
 
-/* Footer Execution Banner */
 .certificate-footer-banner {
-  background: linear-gradient(
-    135deg,
-    rgba(13, 35, 21, 0.95) 0%,
-    rgba(18, 53, 30, 0.95) 100%
-  );
-  border: 1px solid rgba(197, 155, 39, 0.5);
-  border-radius: 0.5rem;
-  padding: 2.5rem 3rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.2rem 1.35rem;
+  border: 1px solid rgba(31, 57, 39, 0.16);
+  border-left: 3px solid #b8944a;
+  border-radius: 0.35rem;
+  background: rgba(30, 58, 39, 0.045);
 }
 
-.footer-banner-text h4 {
-  font-size: 1.35rem;
+.footer-banner-text h3 {
+  margin-bottom: 0.2rem;
+  color: #1b3827;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
   font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.3rem;
+  letter-spacing: -0.025em;
+}
+
+.footer-banner-text {
+  text-align: left;
 }
 
 .footer-banner-text p {
-  color: #d6d3d1;
-  font-size: 0.9rem;
+  color: #62665d;
+  font-size: 0.82rem;
+  line-height: 1.55;
 }
 
 .closing-cta-btn {
-  background-color: #c59b27;
-  color: #07150c;
-  padding: 1rem 2rem;
-  border-radius: 0.375rem;
-  font-weight: 700;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   display: inline-flex;
+  min-height: 46px;
+  flex: 0 0 auto;
   align-items: center;
-  gap: 0.75rem;
-  white-space: nowrap;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid rgba(125, 91, 25, 0.24);
+  border-radius: 4px;
+  background: linear-gradient(110deg, #eac364, #c69737);
+  box-shadow: 0 5px 16px rgba(134, 97, 24, 0.12);
+  color: #152116;
+  font-size: 0.79rem;
+  font-weight: 700;
   transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
+    box-shadow 220ms ease,
+    transform 220ms ease,
+    filter 220ms ease;
 }
 
 .closing-cta-btn:hover {
-  background-color: #d4af37;
+  box-shadow: 0 9px 22px rgba(134, 97, 24, 0.21);
+  filter: brightness(1.04);
   transform: translateY(-2px);
+}
+
+.closing-cta-btn svg {
+  transition: transform 220ms ease;
+}
+
+.closing-cta-btn:hover svg {
+  transform: translateX(3px);
+}
+
+@keyframes document-settle {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes clause-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 900px) {
   .certificate-inner-content {
-    padding: 2rem 1.5rem;
+    padding: 2rem;
+  }
+
+  .certificate-clauses-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .clause-item:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .certificate-footer-banner {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .closing-assurance-section {
+    padding: 4rem 0.9rem;
+  }
+
+  .certificate-inner-content {
+    padding: 1.35rem;
+  }
+
+  .certificate-seal-header {
+    grid-template-columns: auto 1fr;
+    gap: 0.7rem;
+  }
+
+  .certificate-id-label {
+    grid-column: 1 / -1;
+    padding-top: 0.7rem;
+    border-top: 1px solid rgba(31, 57, 39, 0.12);
+    text-align: left;
+  }
+
+  .certificate-clauses-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .clause-item:last-child {
+    grid-column: auto;
   }
 
   .certificate-footer-banner {
     flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-    padding: 2rem 1.5rem;
+    gap: 1rem;
   }
 
   .closing-cta-btn {
-    justify-content: center;
     width: 100%;
-    box-sizing: border-box;
-    white-space: normal;
-    text-align: center;
-  }
-
-  .closing-cta-btn svg {
-    flex-shrink: 0;
-  }
-
-  .clause-item {
-    flex-direction: column;
-    gap: 1rem;
   }
 }
 
-@media (max-width: 1024px) {
+@media (prefers-reduced-motion: reduce) {
+  .certification-seal-silhouette,
   .clause-item {
-    align-items: center;
-    text-align: center;
-  }
-
-  .clause-content {
-    width: 100%;
-  }
-
-  .clause-header-row {
-    justify-content: center;
-    gap: 0.5rem;
+    animation: none;
   }
 }

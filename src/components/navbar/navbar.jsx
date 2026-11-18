@@ -1,12 +1,32 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { Menu, X, Globe } from "lucide-react";
 import "./navbar.css";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const menuToggleRef = useRef(null);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  useEffect(() => {
+    if (!isOpen) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+        menuToggleRef.current?.focus();
+      }
+    };
+    const handlePopState = () => setIsOpen(false);
+
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("popstate", handlePopState);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, [isOpen]);
+
+  const toggleMenu = () => setIsOpen((open) => !open);
   const closeMenu = () => setIsOpen(false);
 
   return (
@@ -37,26 +57,62 @@ export default function Navbar() {
           </Link>
 
           <button
+            type="button"
+            ref={menuToggleRef}
             className="navbar-toggle"
             onClick={toggleMenu}
-            aria-label="Toggle navigation"
+            aria-label={isOpen ? "Close navigation" : "Open navigation"}
+            aria-expanded={isOpen}
+            aria-controls="primary-navigation"
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? (
+              <X className="navbar-toggle-icon" aria-hidden="true" />
+            ) : (
+              <Menu className="navbar-toggle-icon" aria-hidden="true" />
+            )}
           </button>
 
-          <nav className={`navbar-links ${isOpen ? "active" : ""}`}>
-            <Link to="/" onClick={closeMenu}>
+          <nav
+            id="primary-navigation"
+            className={`navbar-links ${isOpen ? "active" : ""}`}
+          >
+            <NavLink
+              to="/"
+              end
+              className={({ isActive }) =>
+                isActive ? "navbar-link-current" : undefined
+              }
+              onClick={closeMenu}
+            >
               Main Page
-            </Link>
-            <Link to="/products" onClick={closeMenu}>
+            </NavLink>
+            <NavLink
+              to="/products"
+              className={({ isActive }) =>
+                isActive ? "navbar-link-current" : undefined
+              }
+              onClick={closeMenu}
+            >
               Products
-            </Link>
-            <Link to="/about" onClick={closeMenu}>
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive ? "navbar-link-current" : undefined
+              }
+              onClick={closeMenu}
+            >
               About Us
-            </Link>
-            <Link to="/contact" className="navbar-cta" onClick={closeMenu}>
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                `navbar-cta${isActive ? " navbar-cta-current" : ""}`
+              }
+              onClick={closeMenu}
+            >
               Request Quote
-            </Link>
+            </NavLink>
           </nav>
         </div>
       </header>
