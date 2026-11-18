@@ -48,23 +48,32 @@ export default function Legacy() {
       {/* Main Narrative Block */}
       <div className="legacy-story-container">
         <div className="legacy-story-card">
-          <h2>Our Story</h2>
-          <p>
-            Kosh International was established with a singular mission: to
-            connect global industrial supply chains directly to the rich,
-            natural harvests of Sudan. In an industry often diluted by
-            intermediaries and inconsistent grading, we maintain absolute
-            transparency and traceability.
-          </p>
-          <p>
-            From our signature{" "}
-            <strong className="legacy-highlight">
-              Acacia Senegal (Hashab)
-            </strong>{" "}
-            Gum Arabic and raw Boswellia oleoresin tears to our meticulously
-            cleaned sesame seeds and hibiscus calyces, every shipment reflects
-            our commitment to purity, consistency, and professional execution.
-          </p>
+          <div className="legacy-story-brand">
+            <img
+              src="/kuosh-logo.svg"
+              alt="Kuosh International Natural Gum Trading Co. Ltd"
+              className="legacy-story-logo"
+            />
+          </div>
+          <div className="legacy-story-content">
+            <h2>Our Story</h2>
+            <p>
+              Kuosh International was established with a singular mission: to
+              connect global industrial supply chains directly to the rich,
+              natural harvests of Sudan. In an industry often diluted by
+              intermediaries and inconsistent grading, we maintain absolute
+              transparency and traceability.
+            </p>
+            <p>
+              From our signature{" "}
+              <strong className="legacy-highlight">
+                Acacia Senegal (Hashab)
+              </strong>{" "}
+              Gum Arabic and raw Boswellia oleoresin tears to our meticulously
+              cleaned sesame seeds and hibiscus calyces, every shipment reflects
+              our commitment to purity, consistency, and professional execution.
+            </p>
+          </div>
         </div>
       </div>
 

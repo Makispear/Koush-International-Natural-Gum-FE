@@ -55,23 +55,15 @@
 .navbar-brand {
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
 }
 
-.navbar-logo-text {
-  font-family: var(--font-display);
-  font-size: 1.23rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: #ffffff;
-}
-
-.navbar-logo-sub {
-  margin-top: 0.1rem;
-  font-size: 0.62rem;
-  color: #f0ca73;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
+.navbar-logo {
+  display: block;
+  width: clamp(230px, 28vw, 330px);
+  height: 72px;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .navbar-toggle {
@@ -184,16 +176,9 @@
     height: 4.5rem;
   }
 
-  .navbar-logo-text {
-    font-size: clamp(1rem, 4vw, 1.25rem);
-    letter-spacing: 0.05em;
-    white-space: nowrap;
-  }
-
-  .navbar-logo-sub {
-    font-size: clamp(0.5rem, 2.1vw, 0.6rem);
-    letter-spacing: 0.08em;
-    white-space: nowrap;
+  .navbar-logo {
+    width: clamp(190px, 54vw, 270px);
+    height: 58px;
   }
 
   .navbar-toggle {

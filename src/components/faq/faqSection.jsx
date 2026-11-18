@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 import { ChevronDown, HelpCircle } from "lucide-react";
 import "./faqSection.css";
 
 export default function FaqSection() {
+  const sectionId = useId();
   const [openIndex, setOpenIndex] = useState(null);
 
   const faqs = [
@@ -19,7 +20,7 @@ export default function FaqSection() {
     {
       question: "What are your minimum order quantities?",
       answer:
-        "As a planning guide, a 20-foot container holds approximately 16 MT and a 40-foot container approximately 26 MT. Final loading quantity depends on the product and packing configuration, so share your target volume and we will confirm what fits.",
+        "Minimum order quantities depend on the product and packing configuration, so share your target volume and we will confirm what is available. For planning, a 20-foot container holds approximately 16 MT and a 40-foot container approximately 26 MT.",
     },
     {
       question: "What packaging options do you offer?",
@@ -57,7 +58,7 @@ export default function FaqSection() {
     <section
       id="faq-section"
       className="faq-section"
-      aria-labelledby="faq-heading"
+      aria-labelledby={`${sectionId}-faq-heading`}
     >
       <div className="faq-container">
         {/* Section Header */}
@@ -66,7 +67,7 @@ export default function FaqSection() {
             <HelpCircle className="w-4 h-4 text-amber-500" />
             <span>Procurement Support</span>
           </div>
-          <h2 className="faq-heading" id="faq-heading">
+          <h2 className="faq-heading" id={`${sectionId}-faq-heading`}>
             Frequently Asked Questions
           </h2>
           <p className="faq-sub">
@@ -79,9 +80,12 @@ export default function FaqSection() {
         <div className="faq-accordion">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
-            const answerId = `faq-answer-${index}`;
+            const answerId = `${sectionId}-faq-answer-${index}`;
             return (
-              <div key={index} className={`faq-item ${isOpen ? "open" : ""}`}>
+              <div
+                key={faq.question}
+                className={`faq-item ${isOpen ? "open" : ""}`}
+              >
                 <button
                   type="button"
                   className="faq-question-btn"

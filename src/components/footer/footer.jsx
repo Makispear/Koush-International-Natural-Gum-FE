@@ -13,19 +13,16 @@ export default function Footer() {
           {/* Column 1: Company Info */}
           <div className="footer-col footer-brand-col">
             <div className="footer-brand">
-              <span className="footer-logo-text">KUOSH INTERNATIONAL</span>
-              <span className="footer-logo-sub">
-                Natural Gum & Agricultural Exports
-              </span>
+              <img
+                className="footer-logo"
+                src="/kuosh-logo.svg"
+                alt="Kuosh International Natural Gum Trading Co. Ltd"
+              />
             </div>
             <p className="footer-about-text">
               We source and export top-grade Gum Arabic and agricultural
               commodities directly from origin.
             </p>
-            <div className="footer-origin-badge">
-              <Globe className="w-4 h-4 text-amber-500" />
-              <span>Khartoum, Sudan & International Operations</span>
-            </div>
           </div>
 
           {/* Column 2: Navigation Links */}

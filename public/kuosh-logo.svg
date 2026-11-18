@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 150" role="img" aria-labelledby="title desc">
+  <title id="title">Kuosh International Natural Gum Trading Company</title>
+  <desc id="desc">A circular red crown emblem beside the Kuosh International wordmark</desc>
+
+  <g id="emblem" transform="translate(8 8)">
+    <circle cx="67" cy="67" r="62" fill="#07120b" stroke="#e4b852" stroke-width="5"/>
+    <circle cx="67" cy="67" r="55" fill="#ffffff"/>
+
+    <path d="M31 58V46l10 7 8-23 18 16 18-16 8 23 10-7v12c-24-5-48-5-72 0Z"
+          fill="#b94a32" stroke="#cf5a3d" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="49" cy="29" r="5" fill="#d24f32"/>
+    <circle cx="67" cy="24" r="5" fill="#d24f32"/>
+    <circle cx="85" cy="29" r="5" fill="#d24f32"/>
+    <circle cx="30" cy="46" r="5" fill="#d24f32"/>
+    <circle cx="104" cy="46" r="5" fill="#d24f32"/>
+    <path d="M31 58c24-5 48-5 72 0v8H31Z" fill="#d24f32"/>
+
+    <path d="M33 70h68v35c-9 10-59 10-68 0Z" fill="#0b1c12"/>
+    <path d="M43 78h12v21H43zm36 0h12v21H79z"
+          fill="#ffffff"/>
+    <path d="M55 82h24v12H55z" fill="#ffffff"/>
+  </g>
+
+  <g id="wordmark" transform="translate(148 26)">
+    <text x="0" y="62"
+          fill="#ffffff"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-size="38"
+          font-weight="800"
+          letter-spacing="1">KUOSH INTERNATIONAL</text>
+    <rect x="0" y="87" width="438" height="3" rx="1.5" fill="#e4b852"/>
+    <text x="0" y="116"
+          fill="#f0ca73"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="18"
+          font-weight="700"
+          letter-spacing="3">NATURAL GUM TRADING CO. LTD</text>
+  </g>
+</svg>

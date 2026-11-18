@@ -90,6 +90,26 @@
   border-radius: 1rem;
   padding: clamp(1.5rem, 5vw, 3.5rem);
   box-shadow: 0 20px 55px rgba(0, 0, 0, 0.24);
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.legacy-story-brand {
+  display: grid;
+  place-items: center;
+  min-height: 190px;
+  padding: 1.25rem;
+  border-right: 1px solid rgba(235, 201, 125, 0.18);
+}
+
+.legacy-story-logo {
+  display: block;
+  width: 100%;
+  max-width: 310px;
+  height: auto;
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.24));
 }
 
 .legacy-story-card h2 {
@@ -286,6 +306,18 @@
 @media (max-width: 768px) {
   .legacy-story-card {
     padding: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  .legacy-story-brand {
+    min-height: 0;
+    padding: 0.25rem 1.25rem 1.25rem;
+    border-right: 0;
+    border-bottom: 1px solid rgba(235, 201, 125, 0.18);
+  }
+
+  .legacy-story-logo {
+    max-width: 280px;
   }
 
   .legacy-location-section {
