@@ -27,26 +27,30 @@ export default function Footer() {
 
           {/* Column 2: Navigation Links */}
           <div className="footer-col">
-            <h4 className="footer-heading">Navigation</h4>
-            <ul className="footer-links-list">
-              <li>
-                <Link to="/">Main Page</Link>
-              </li>
-              <li>
-                <Link to="/products">Products & Specifications</Link>
-              </li>
-              <li>
-                <Link to="/about">About Us</Link>
-              </li>
-              <li>
-                <Link to="/contact">Request Quotation (RFQ)</Link>
-              </li>
-            </ul>
+            <nav aria-labelledby="footer-navigation-heading">
+              <h2 className="footer-heading" id="footer-navigation-heading">
+                Navigation
+              </h2>
+              <ul className="footer-links-list">
+                <li>
+                  <Link to="/">Main Page</Link>
+                </li>
+                <li>
+                  <Link to="/products">Products & Specifications</Link>
+                </li>
+                <li>
+                  <Link to="/about">About Us</Link>
+                </li>
+                <li>
+                  <Link to="/contact">Request Quotation (RFQ)</Link>
+                </li>
+              </ul>
+            </nav>
           </div>
 
           {/* Column 3: Product Catalogue */}
           <div className="footer-col">
-            <h4 className="footer-heading">Export Catalog</h4>
+            <h2 className="footer-heading">Export Catalog</h2>
             <ul className="footer-links-list">
               <li>
                 <Link to="/products">View current product catalogue</Link>
@@ -56,14 +60,20 @@ export default function Footer() {
 
           {/* Column 4: Trade Desk Contact */}
           <div className="footer-col">
-            <h4 className="footer-heading">Global Trade Desk</h4>
+            <h2 className="footer-heading">Global Trade Desk</h2>
             <ul className="footer-contact-list">
               <li>
-                <Globe className="w-4 h-4 text-amber-500 shrink-0" />
+                <Globe
+                  className="w-4 h-4 text-amber-500 shrink-0"
+                  aria-hidden="true"
+                />
                 <span>U.S based operations</span>
               </li>
               <li>
-                <MapPin className="w-4 h-4 text-amber-500 shrink-0" />
+                <MapPin
+                  className="w-4 h-4 text-amber-500 shrink-0"
+                  aria-hidden="true"
+                />
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=Omdurman%2C+Sudan+-+Omdurman+Industrial+Area"
                   target="_blank"
@@ -73,13 +83,19 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Mail className="w-4 h-4 text-amber-500 shrink-0" />
+                <Mail
+                  className="w-4 h-4 text-amber-500 shrink-0"
+                  aria-hidden="true"
+                />
                 <a href="mailto:info@kuoshinternational.com">
                   info@kuoshinternational.com
                 </a>
               </li>
               <li>
-                <PhoneCallIcon className="w-4 h-4 text-amber-500 shrink-0" />
+                <PhoneCallIcon
+                  className="w-4 h-4 text-amber-500 shrink-0"
+                  aria-hidden="true"
+                />
                 <a href="tel:+18607941672">+1 (860) 794-1672</a>
               </li>
             </ul>

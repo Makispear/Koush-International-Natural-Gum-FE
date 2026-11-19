@@ -120,7 +120,7 @@ export default function Navbar() {
       <div className="navbar-top-bar">
         <div className="navbar-top-container">
           <div className="navbar-top-left">
-            <Globe className="w-3.5 h-3.5 text-amber-500" />
+          <Globe className="w-3.5 h-3.5 text-amber-500" aria-hidden="true" />
             <span>
               Headquartered in Khartoum, Sudan with Global Export Operations
             </span>
@@ -162,6 +162,7 @@ export default function Navbar() {
             id="primary-navigation"
             ref={navigationRef}
             className={`navbar-links ${isOpen ? "active" : ""}`}
+            aria-label="Primary navigation"
           >
             <NavLink
               to="/"

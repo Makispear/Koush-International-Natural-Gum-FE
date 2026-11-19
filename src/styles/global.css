@@ -92,6 +92,46 @@ a {
   min-width: 0;
 }
 
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 10000;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--color-gold-bright);
+  border-radius: 0.35rem;
+  background: var(--color-forest-deep);
+  color: var(--color-text-light);
+  transform: translateY(calc(-100% - 1rem));
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.not-found-page {
+  display: grid;
+  min-height: 50vh;
+  align-content: center;
+  justify-items: start;
+  gap: 1rem;
+  width: min(100% - 2rem, 72rem);
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+.not-found-page h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.not-found-page a {
+  color: var(--color-gold-bright);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 .home-page,
 .products-page,
 .legacy-page,

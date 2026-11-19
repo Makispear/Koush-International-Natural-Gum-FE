@@ -186,9 +186,10 @@ export default function RequestQuote() {
                   spellCheck="false"
                   inputMode="email"
                   placeholder="you@company.com"
+                  aria-describedby="rfq-email-hint"
                   required
                 />
-                <p className="rfq-field-hint">
+                <p className="rfq-field-hint" id="rfq-email-hint">
                   The only required field. We’ll use it to reply to your enquiry.
                 </p>
               </div>

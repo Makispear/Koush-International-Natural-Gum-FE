@@ -64,7 +64,7 @@ export default function FaqSection() {
         {/* Section Header */}
         <div className="faq-header">
           <div className="faq-badge">
-            <HelpCircle className="w-4 h-4 text-amber-500" />
+            <HelpCircle className="w-4 h-4 text-amber-500" aria-hidden="true" />
             <span>Procurement Support</span>
           </div>
           <h2 className="faq-heading" id={`${sectionId}-faq-heading`}>
@@ -100,6 +100,7 @@ export default function FaqSection() {
                   <span className="faq-question-text">{faq.question}</span>
                   <ChevronDown
                     className={`faq-chevron ${isOpen ? "rotate" : ""}`}
+                    aria-hidden="true"
                   />
                 </button>
                 <div

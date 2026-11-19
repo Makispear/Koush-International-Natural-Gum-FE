@@ -1,6 +1,26 @@
 {
     "rewrites": [
         {
+            "source": "/products",
+            "destination": "/products.html"
+        },
+        {
+            "source": "/about",
+            "destination": "/about.html"
+        },
+        {
+            "source": "/contact",
+            "destination": "/contact.html"
+        },
+        {
+            "source": "/quote",
+            "destination": "/quote.html"
+        },
+        {
+            "source": "/legacy",
+            "destination": "/legacy.html"
+        },
+        {
             "source": "/(.*)",
             "destination": "/index.html"
         }

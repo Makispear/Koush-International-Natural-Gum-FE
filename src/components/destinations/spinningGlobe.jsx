@@ -9,6 +9,7 @@ export default function SpinningGlobeDestinations() {
   const globeEl = useRef();
   const containerRef = useRef();
   const [globeSize, setGlobeSize] = useState({ width: 800, height: 500 });
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   const tradePins = [
     {
@@ -134,6 +135,19 @@ export default function SpinningGlobeDestinations() {
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
+  useEffect(() => {
+    const motionPreference = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    );
+    const updateMotionPreference = () =>
+      setPrefersReducedMotion(motionPreference.matches);
+
+    updateMotionPreference();
+    motionPreference.addEventListener("change", updateMotionPreference);
+    return () =>
+      motionPreference.removeEventListener("change", updateMotionPreference);
+  }, []);
+
   return (
     <section id="destinations" className="globe-section-wrapper">
       <div className="globe-container">
@@ -195,7 +209,7 @@ export default function SpinningGlobeDestinations() {
               }
               globeEl.current.pointOfView(
                 { lat: 17, lng: 32, altitude: 1.4 },
-                900,
+                prefersReducedMotion ? 0 : 900,
               );
             }}
             globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
@@ -214,7 +228,7 @@ export default function SpinningGlobeDestinations() {
             arcAltitudeAutoScale={0.3}
             arcDashLength={0.24}
             arcDashGap={0.9}
-            arcDashAnimateTime={2600}
+            arcDashAnimateTime={prefersReducedMotion ? 0 : 2600}
             pointsData={tradePins}
             pointLat={(d) => d.lat}
             pointLng={(d) => d.lng}
@@ -222,7 +236,7 @@ export default function SpinningGlobeDestinations() {
             pointAltitude={(d) => (d.type === "origin" ? 0.028 : 0.014)}
             pointRadius={(d) => (d.type === "origin" ? 0.32 : 0.18)}
             pointsMerge={false}
-            ringsData={[origin]}
+            ringsData={prefersReducedMotion ? [] : [origin]}
             ringLat={(d) => d.lat}
             ringLng={(d) => d.lng}
             ringColor={() => (t) => `rgba(240, 202, 115, ${1 - t})`}

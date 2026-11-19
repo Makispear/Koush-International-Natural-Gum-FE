@@ -147,7 +147,7 @@ export default function Hero() {
         className="hero-scroll-prompt"
       >
         <span>Discover our reach</span>
-        <ChevronDown className="w-4 h-4 text-amber-500" />
+        <ChevronDown className="w-4 h-4 text-amber-500" aria-hidden="true" />
       </a>
     </section>
   );
