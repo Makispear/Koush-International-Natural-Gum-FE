@@ -1,13 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, X, Globe, Download } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import "./navbar.css";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [installPrompt, setInstallPrompt] = useState(null);
-  const [installMessage, setInstallMessage] = useState("");
-  const [isInstalled, setIsInstalled] = useState(false);
   const menuToggleRef = useRef(null);
   const navigationRef = useRef(null);
 
@@ -58,61 +55,8 @@ export default function Navbar() {
     };
   }, [isOpen]);
 
-  useEffect(() => {
-    const checkInstalled = () => {
-      setIsInstalled(
-        window.matchMedia("(display-mode: standalone)").matches ||
-          window.navigator.standalone === true,
-      );
-    };
-    const handleBeforeInstallPrompt = (event) => {
-      event.preventDefault();
-      setInstallPrompt(event);
-      setInstallMessage("");
-    };
-    const handleAppInstalled = () => {
-      setInstallPrompt(null);
-      setInstallMessage("");
-      setIsInstalled(true);
-    };
-
-    checkInstalled();
-    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
-    window.addEventListener("appinstalled", handleAppInstalled);
-    const displayMode = window.matchMedia("(display-mode: standalone)");
-    displayMode.addEventListener("change", checkInstalled);
-    return () => {
-      displayMode.removeEventListener("change", checkInstalled);
-      window.removeEventListener(
-        "beforeinstallprompt",
-        handleBeforeInstallPrompt,
-      );
-      window.removeEventListener("appinstalled", handleAppInstalled);
-    };
-  }, []);
-
   const toggleMenu = () => setIsOpen((open) => !open);
   const closeMenu = () => setIsOpen(false);
-  const installApp = async () => {
-    if (!installPrompt) {
-      setInstallMessage(
-        "On iPhone or iPad, tap Share, then Add to Home Screen. On other devices, open your browser menu and choose Install app.",
-      );
-      return;
-    }
-
-    try {
-      await installPrompt.prompt();
-      const { outcome } = await installPrompt.userChoice;
-      if (outcome === "accepted") closeMenu();
-    } catch {
-      setInstallMessage(
-        "Installation could not start. Try your browser's install option.",
-      );
-    } finally {
-      setInstallPrompt(null);
-    }
-  };
 
   return (
     <div className="navbar-wrapper">
@@ -120,7 +64,10 @@ export default function Navbar() {
       <div className="navbar-top-bar">
         <div className="navbar-top-container">
           <div className="navbar-top-left">
-          <Globe className="w-3.5 h-3.5 text-amber-500" aria-hidden="true" />
+            <Globe
+              className="w-3.5 h-3.5 text-amber-500"
+              aria-hidden="true"
+            />
             <span>
               Headquartered in Khartoum, Sudan with Global Export Operations
             </span>
@@ -201,20 +148,6 @@ export default function Navbar() {
             >
               Request Quote
             </NavLink>
-            {!isInstalled && (
-              <button
-                type="button"
-                className="navbar-install"
-                onClick={installApp}
-              >
-                Install app <Download size={16} aria-hidden="true" />
-              </button>
-            )}
-            {installMessage && (
-              <span className="navbar-install-message" role="status">
-                {installMessage}
-              </span>
-            )}
           </nav>
         </div>
       </header>

@@ -152,48 +152,13 @@
     filter 0.2s ease;
 }
 
-.navbar-install {
-  display: inline-flex;
-  min-height: 44px;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.65rem 0.9rem;
-  border: 1px solid rgba(235, 201, 125, 0.32);
-  border-radius: 0.25rem;
-  color: #fae9be;
-  background: rgba(235, 201, 125, 0.07);
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-  transition:
-    border-color 200ms ease,
-    background-color 200ms ease,
-    color 200ms ease;
-}
-
-.navbar-install:focus-visible {
-  outline: 2px solid #f3e5ab;
-  outline-offset: 3px;
-}
-
-.navbar-install-message {
-  max-width: 16rem;
-  color: #f3e5ab;
-  font-size: 0.72rem;
-  line-height: 1.5;
-  text-align: center;
-}
-
 @media (hover: hover) and (pointer: fine) {
   .navbar-toggle:hover {
     border-color: rgba(235, 201, 125, 0.55);
     background-color: rgba(235, 201, 125, 0.08);
   }
 
-  .navbar-links a:not(.navbar-cta):not(.navbar-install):hover {
+  .navbar-links a:not(.navbar-cta):hover {
     color: #f0ca73;
     transform: translateY(-1px);
   }
@@ -209,11 +174,6 @@
     transform: translateY(-1px);
   }
 
-  .navbar-install:hover {
-    border-color: rgba(235, 201, 125, 0.6);
-    color: #fff3d4;
-    background: rgba(235, 201, 125, 0.14);
-  }
 }
 
 @media (max-width: 1024px) {
@@ -338,13 +298,6 @@
     text-align: center;
   }
 
-  .navbar-install {
-    width: min(100%, 14rem);
-  }
-
-  .navbar-install-message {
-    max-width: min(100%, 18rem);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
