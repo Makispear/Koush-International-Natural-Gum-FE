@@ -95,11 +95,13 @@
     filter 220ms ease;
 }
 
-.catalog-inquiry-btn:hover,
-.catalog-footer-link:hover {
-  box-shadow: 0 12px 30px rgba(197, 149, 49, 0.24);
-  filter: brightness(1.04);
-  transform: translateY(-2px);
+@media (hover: hover) and (pointer: fine) {
+  .catalog-inquiry-btn:hover,
+  .catalog-footer-link:hover {
+    box-shadow: 0 12px 30px rgba(197, 149, 49, 0.24);
+    filter: brightness(1.04);
+    transform: translateY(-2px);
+  }
 }
 
 .catalog-inquiry-btn:focus-visible,
@@ -115,10 +117,12 @@
   transition: transform 220ms ease;
 }
 
-.catalog-inquiry-btn:hover svg,
-.catalog-footer-link:hover svg,
-.product-inquiry-link:hover svg {
-  transform: translateX(3px);
+@media (hover: hover) and (pointer: fine) {
+  .catalog-inquiry-btn:hover svg,
+  .catalog-footer-link:hover svg,
+  .product-inquiry-link:hover svg {
+    transform: translateX(3px);
+  }
 }
 
 .samples-notice {
@@ -197,10 +201,12 @@
     transform 260ms ease;
 }
 
-.product-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(235, 201, 125, 0.4);
-  box-shadow: 0 26px 65px rgba(0, 0, 0, 0.27);
+@media (hover: hover) and (pointer: fine) {
+  .product-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(235, 201, 125, 0.4);
+    box-shadow: 0 26px 65px rgba(0, 0, 0, 0.27);
+  }
 }
 
 .flagship-card {
@@ -239,9 +245,11 @@
     transform 800ms cubic-bezier(0.2, 0.75, 0.25, 1);
 }
 
-.flagship-card:hover .product-thumb {
-  filter: saturate(1) contrast(1.03);
-  transform: scale(1.035);
+@media (hover: hover) and (pointer: fine) {
+  .flagship-card:hover .product-thumb {
+    filter: saturate(1) contrast(1.03);
+    transform: scale(1.035);
+  }
 }
 
 .product-image-caption {
@@ -383,9 +391,11 @@
   font-weight: 400;
 }
 
-.product-variety-option:hover {
-  border-color: rgba(235, 201, 125, 0.57);
-  background: rgba(197, 155, 39, 0.08);
+@media (hover: hover) and (pointer: fine) {
+  .product-variety-option:hover {
+    border-color: rgba(235, 201, 125, 0.57);
+    background: rgba(197, 155, 39, 0.08);
+  }
 }
 
 .product-variety-option[aria-pressed="true"] {
@@ -495,10 +505,12 @@
     color 200ms ease;
 }
 
-.product-inquiry-link:hover {
-  border-color: rgba(235, 201, 125, 0.48);
-  background: rgba(197, 155, 39, 0.08);
-  color: #fff0bd;
+@media (hover: hover) and (pointer: fine) {
+  .product-inquiry-link:hover {
+    border-color: rgba(235, 201, 125, 0.48);
+    background: rgba(197, 155, 39, 0.08);
+    color: #fff0bd;
+  }
 }
 
 .supplementary-section {

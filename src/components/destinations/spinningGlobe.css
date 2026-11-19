@@ -140,14 +140,16 @@
   transition: transform 220ms ease;
 }
 
-.globe-cta:hover {
-  box-shadow: 0 12px 32px rgba(197, 149, 49, 0.28);
-  filter: brightness(1.05);
-  transform: translateY(-2px);
-}
+@media (hover: hover) and (pointer: fine) {
+  .globe-cta:hover {
+    box-shadow: 0 12px 32px rgba(197, 149, 49, 0.28);
+    filter: brightness(1.05);
+    transform: translateY(-2px);
+  }
 
-.globe-cta:hover svg {
-  transform: translate(2px, -2px);
+  .globe-cta:hover svg {
+    transform: translate(2px, -2px);
+  }
 }
 
 .globe-canvas-wrapper {
@@ -191,6 +193,16 @@
 
 .globe-canvas-wrapper:active {
   cursor: grabbing;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .globe-canvas-wrapper {
+    cursor: default;
+  }
+
+  .globe-canvas-wrapper canvas {
+    pointer-events: none;
+  }
 }
 
 .globe-origin-chip {

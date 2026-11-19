@@ -73,11 +73,6 @@
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.legacy-inquiry-btn:hover {
-  box-shadow: 0 10px 28px rgba(197, 149, 49, 0.24);
-  transform: translateY(-2px);
-}
-
 /* Story Section */
 .legacy-story-container {
   max-width: 1200px;
@@ -182,10 +177,6 @@
   text-underline-offset: 0.2em;
 }
 
-.legacy-location-link:hover {
-  color: #d4af37;
-}
-
 .legacy-location-link:focus-visible {
   outline: 2px solid #f3e5ab;
   outline-offset: 3px;
@@ -245,10 +236,21 @@
     box-shadow 0.3s ease;
 }
 
-.legacy-pillar-card:hover {
-  border-color: rgba(235, 201, 125, 0.48);
-  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.25);
-  transform: translateY(-6px);
+@media (hover: hover) and (pointer: fine) {
+  .legacy-inquiry-btn:hover {
+    box-shadow: 0 10px 28px rgba(197, 149, 49, 0.24);
+    transform: translateY(-2px);
+  }
+
+  .legacy-location-link:hover {
+    color: #d4af37;
+  }
+
+  .legacy-pillar-card:hover {
+    border-color: rgba(235, 201, 125, 0.48);
+    box-shadow: 0 20px 42px rgba(0, 0, 0, 0.25);
+    transform: translateY(-6px);
+  }
 }
 
 .legacy-icon-wrapper {

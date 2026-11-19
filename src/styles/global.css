@@ -69,6 +69,16 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+@media (hover: none) and (pointer: coarse) {
+  a:active,
+  button:not(:disabled):active,
+  summary:active,
+  [role="option"]:active {
+    filter: brightness(0.9);
+    transition-duration: 90ms;
+  }
+}
+
 :focus-visible {
   outline: 2px solid var(--color-gold-bright);
   outline-offset: 4px;

@@ -125,8 +125,9 @@ export default function RequestQuote() {
                 </span>
               </div>
               <span className="rfq-document-category">
-                Product <i aria-hidden="true">·</i> Supply <i aria-hidden="true">·</i>{" "}
-                Quotation
+                <span>Product</span>
+                <span>Supply</span>
+                <span>Quotation</span>
               </span>
             </div>
 

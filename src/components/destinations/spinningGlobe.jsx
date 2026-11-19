@@ -174,7 +174,7 @@ export default function SpinningGlobeDestinations() {
           className="globe-canvas-wrapper"
           ref={containerRef}
           role="group"
-          aria-label="Interactive export globe, centered on Khartoum, Sudan, with routes to our international destinations"
+          aria-label="Export route globe, centered on Khartoum, Sudan, with routes to international destinations"
         >
           <div className="globe-origin-chip">
             <span className="globe-origin-chip-dot" />

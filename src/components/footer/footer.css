@@ -82,11 +82,6 @@
   overflow-wrap: anywhere;
 }
 
-.footer-links-list a:hover {
-  color: #f0ca73;
-  transform: translateX(3px);
-}
-
 .footer-links-list a:focus-visible {
   outline: 2px solid #f3e5ab;
   outline-offset: 3px;
@@ -114,10 +109,6 @@
   transition: color 0.2s ease;
 }
 
-.footer-contact-list a:hover {
-  color: #f0ca73;
-}
-
 .footer-contact-list a:focus-visible {
   outline: 2px solid #f3e5ab;
   outline-offset: 3px;
@@ -141,10 +132,21 @@
   transition: all 0.2s ease;
 }
 
-.footer-rfq-btn:hover {
-  background-color: #c59b27;
-  color: #07150c;
-  border-color: #c59b27;
+@media (hover: hover) and (pointer: fine) {
+  .footer-links-list a:hover {
+    color: #f0ca73;
+    transform: translateX(3px);
+  }
+
+  .footer-contact-list a:hover {
+    color: #f0ca73;
+  }
+
+  .footer-rfq-btn:hover {
+    background-color: #c59b27;
+    color: #07150c;
+    border-color: #c59b27;
+  }
 }
 
 /* Footer Bottom Bar */

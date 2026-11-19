@@ -51,8 +51,10 @@
   animation: scrollTicker 35s linear infinite;
 }
 
-.ticker-track:hover {
-  animation-play-state: paused;
+@media (hover: hover) and (pointer: fine) {
+  .ticker-track:hover {
+    animation-play-state: paused;
+  }
 }
 
 .ticker-item {

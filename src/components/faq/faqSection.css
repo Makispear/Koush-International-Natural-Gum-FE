@@ -67,9 +67,11 @@
   transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
 }
 
-.faq-item:hover {
-  border-color: rgba(235, 201, 125, 0.38);
-  transform: translateY(-2px);
+@media (hover: hover) and (pointer: fine) {
+  .faq-item:hover {
+    border-color: rgba(235, 201, 125, 0.38);
+    transform: translateY(-2px);
+  }
 }
 
 .faq-item.open {

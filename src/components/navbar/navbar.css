@@ -4,6 +4,8 @@
   top: 0;
   z-index: 50;
   width: 100%;
+  padding-top: env(safe-area-inset-top, 0px);
+  background: rgba(7, 20, 14, 0.96);
   backdrop-filter: blur(18px);
 }
 
@@ -45,7 +47,8 @@
 .navbar-container {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 max(1.5rem, env(safe-area-inset-right, 0px)) 0
+    max(1.5rem, env(safe-area-inset-left, 0px));
   height: 5.5rem;
   display: flex;
   align-items: center;
@@ -79,11 +82,6 @@
     background-color 200ms ease,
     border-color 200ms ease,
     transform 220ms ease;
-}
-
-.navbar-toggle:hover {
-  border-color: rgba(235, 201, 125, 0.55);
-  background-color: rgba(235, 201, 125, 0.08);
 }
 
 .navbar-toggle:focus-visible {
@@ -133,12 +131,6 @@
   transition: transform 230ms ease;
 }
 
-.navbar-links a:not(.navbar-cta):hover {
-  color: #f0ca73;
-  transform: translateY(-1px);
-}
-
-.navbar-links a:not(.navbar-cta):hover::after,
 .navbar-links a.navbar-link-current::after {
   transform: scaleX(1);
   transform-origin: left;
@@ -160,10 +152,68 @@
     filter 0.2s ease;
 }
 
-.navbar-cta:hover {
-  box-shadow: 0 6px 22px rgba(197, 149, 49, 0.3);
-  filter: brightness(1.04);
-  transform: translateY(-1px);
+.navbar-install {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid rgba(235, 201, 125, 0.32);
+  border-radius: 0.25rem;
+  color: #fae9be;
+  background: rgba(235, 201, 125, 0.07);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition:
+    border-color 200ms ease,
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+.navbar-install:focus-visible {
+  outline: 2px solid #f3e5ab;
+  outline-offset: 3px;
+}
+
+.navbar-install-message {
+  max-width: 16rem;
+  color: #f3e5ab;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .navbar-toggle:hover {
+    border-color: rgba(235, 201, 125, 0.55);
+    background-color: rgba(235, 201, 125, 0.08);
+  }
+
+  .navbar-links a:not(.navbar-cta):not(.navbar-install):hover {
+    color: #f0ca73;
+    transform: translateY(-1px);
+  }
+
+  .navbar-links a:not(.navbar-cta):hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .navbar-cta:hover {
+    box-shadow: 0 6px 22px rgba(197, 149, 49, 0.3);
+    filter: brightness(1.04);
+    transform: translateY(-1px);
+  }
+
+  .navbar-install:hover {
+    border-color: rgba(235, 201, 125, 0.6);
+    color: #fff3d4;
+    background: rgba(235, 201, 125, 0.14);
+  }
 }
 
 @media (max-width: 1024px) {
@@ -172,8 +222,15 @@
   }
 
   .navbar-container {
-    padding: 0 1rem;
+    padding: 0 max(1rem, env(safe-area-inset-right, 0px)) 0
+      max(1rem, env(safe-area-inset-left, 0px));
     height: 4.5rem;
+  }
+
+  .navbar-toggle {
+    width: 44px;
+    height: 44px;
+    padding: 0;
   }
 
   .navbar-logo {
@@ -188,9 +245,9 @@
 
   .navbar-links {
     position: absolute;
-    top: 4.5rem;
-    left: 0;
-    width: 100%;
+    top: calc(4.5rem + env(safe-area-inset-top, 0px));
+    right: max(0px, env(safe-area-inset-right, 0px));
+    left: max(0px, env(safe-area-inset-left, 0px));
     flex-direction: column;
     align-items: center;
     padding: 1.8rem 1.25rem 2rem;
@@ -223,6 +280,11 @@
   }
 
   .navbar-links a {
+    display: flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45rem 0.8rem;
     font-size: 0.88rem;
   }
 
@@ -274,6 +336,14 @@
   .navbar-links .navbar-cta {
     min-width: min(100%, 14rem);
     text-align: center;
+  }
+
+  .navbar-install {
+    width: min(100%, 14rem);
+  }
+
+  .navbar-install-message {
+    max-width: min(100%, 18rem);
   }
 }
 
